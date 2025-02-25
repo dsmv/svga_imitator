@@ -18,12 +18,12 @@ Simulate output to SVGA from RTL simulator
 
 ### example svga_osc - cadr 0
 
-![](./doc/example_osc_svga_1.png)
+![](./doc/example_osc_svga_0.png)
 
 ### example svga_osc - cadr 1
 
-![](./doc/example_osc_svga_2.png)
+![](./doc/example_osc_svga_1.png)
 
 ### example svga_osc - cadr 2
 
-![](./doc/example_osc_svga_3.png)
+![](./doc/example_osc_svga_2.png)
