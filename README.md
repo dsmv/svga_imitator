@@ -9,3 +9,21 @@ Simulate output to SVGA from RTL simulator
 * https://github.com/yuri-panchul/basics-graphics-music
 * https://github.com/dsmv/2023-lalambda-fpga-labs
 * https://github.com/dsmv/vivado_simulation_example
+
+## Screenshots
+
+### example svga_osc - Window (cadr 2)
+
+![](./doc/example_ocs_window.png)
+
+### example svga_osc - cadr 0
+
+![](./doc/example_osc_svga_0.png)
+
+### example svga_osc - cadr 1
+
+![](./doc/example_osc_svga_0.png)
+
+### example svga_osc - cadr 2
+
+![](./doc/example_osc_svga_0.png)
