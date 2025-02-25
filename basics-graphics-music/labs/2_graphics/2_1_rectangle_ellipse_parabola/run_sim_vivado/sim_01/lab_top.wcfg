@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="\$unit_sim_svga_sv_626398705 " />
+            <top_module name="tb" />
+            <top_module name="tb_01_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="18.295115301 ms"></ZoomEndTime>
+      <Cursor1Time time="0.000000000 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="250"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="38" />
+   <wave_markers>
+      <marker label="" time="45855795000" />
+      <marker label="" time="45835318000" />
+   </wave_markers>
+   <wvobject type="logic" fp_name="/tb/s/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/s/key">
+      <obj_property name="ElementShortName">key[3:0]</obj_property>
+      <obj_property name="ObjectShortName">key[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/s/vsync">
+      <obj_property name="ElementShortName">vsync</obj_property>
+      <obj_property name="ObjectShortName">vsync</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/s/hsync">
+      <obj_property name="ElementShortName">hsync</obj_property>
+      <obj_property name="ObjectShortName">hsync</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/slow_clk">
+      <obj_property name="ElementShortName">slow_clk</obj_property>
+      <obj_property name="ObjectShortName">slow_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/key">
+      <obj_property name="ElementShortName">key[3:0]</obj_property>
+      <obj_property name="ObjectShortName">key[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/sw">
+      <obj_property name="ElementShortName">sw[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sw[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/led">
+      <obj_property name="ElementShortName">led[7:0]</obj_property>
+      <obj_property name="ObjectShortName">led[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/abcdefgh">
+      <obj_property name="ElementShortName">abcdefgh[7:0]</obj_property>
+      <obj_property name="ObjectShortName">abcdefgh[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/digit">
+      <obj_property name="ElementShortName">digit[7:0]</obj_property>
+      <obj_property name="ObjectShortName">digit[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/x">
+      <obj_property name="ElementShortName">x[9:0]</obj_property>
+      <obj_property name="ObjectShortName">x[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/y">
+      <obj_property name="ElementShortName">y[9:0]</obj_property>
+      <obj_property name="ObjectShortName">y[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/red">
+      <obj_property name="ElementShortName">red[3:0]</obj_property>
+      <obj_property name="ObjectShortName">red[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/green">
+      <obj_property name="ElementShortName">green[3:0]</obj_property>
+      <obj_property name="ObjectShortName">green[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/blue">
+      <obj_property name="ElementShortName">blue[3:0]</obj_property>
+      <obj_property name="ObjectShortName">blue[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/mic">
+      <obj_property name="ElementShortName">mic[23:0]</obj_property>
+      <obj_property name="ObjectShortName">mic[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/sound">
+      <obj_property name="ElementShortName">sound[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sound[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/uart_rx">
+      <obj_property name="ElementShortName">uart_rx</obj_property>
+      <obj_property name="ObjectShortName">uart_rx</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/uart_tx">
+      <obj_property name="ElementShortName">uart_tx</obj_property>
+      <obj_property name="ObjectShortName">uart_tx</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/gpio">
+      <obj_property name="ElementShortName">gpio[99:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio[99:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/x_2">
+      <obj_property name="ElementShortName">x_2[19:0]</obj_property>
+      <obj_property name="ObjectShortName">x_2[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/x11">
+      <obj_property name="ElementShortName">x11[10:0]</obj_property>
+      <obj_property name="ObjectShortName">x11[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/y10">
+      <obj_property name="ElementShortName">y10[9:0]</obj_property>
+      <obj_property name="ObjectShortName">y10[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/clk_mhz">
+      <obj_property name="ElementShortName">clk_mhz[31:0]</obj_property>
+      <obj_property name="ObjectShortName">clk_mhz[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_key">
+      <obj_property name="ElementShortName">w_key[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_key[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_sw">
+      <obj_property name="ElementShortName">w_sw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_sw[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_led">
+      <obj_property name="ElementShortName">w_led[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_led[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_digit">
+      <obj_property name="ElementShortName">w_digit[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_digit[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_gpio">
+      <obj_property name="ElementShortName">w_gpio[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_gpio[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/screen_width">
+      <obj_property name="ElementShortName">screen_width[31:0]</obj_property>
+      <obj_property name="ObjectShortName">screen_width[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/screen_height">
+      <obj_property name="ElementShortName">screen_height[31:0]</obj_property>
+      <obj_property name="ObjectShortName">screen_height[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_red">
+      <obj_property name="ElementShortName">w_red[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_red[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_green">
+      <obj_property name="ElementShortName">w_green[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_green[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_blue">
+      <obj_property name="ElementShortName">w_blue[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_blue[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_x">
+      <obj_property name="ElementShortName">w_x[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_x[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_y">
+      <obj_property name="ElementShortName">w_y[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_y[31:0]</obj_property>
+   </wvobject>
+</wave_config>

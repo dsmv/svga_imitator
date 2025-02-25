@@ -1,0 +1,10 @@
+../../../../tb_common/sim_svga.sv
+../../../../../peripherals/vga.sv
+../../../../common/counter_with_enable.sv
+../../../../common/seven_segment_display.sv
+../../../../common/shift_reg.sv
+../../../../common/strobe_gen.sv
+../../lab_top.sv
+../../tb/tb_01/tb_01_if.sv
+../../tb/tb_01/tb_01_pkg.sv
+../../tb/tb_01/tb_01.sv

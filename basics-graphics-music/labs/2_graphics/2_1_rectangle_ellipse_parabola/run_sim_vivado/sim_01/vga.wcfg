@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="\$unit_sim_svga_sv " />
+            <top_module name="tb" />
+            <top_module name="tb_01_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="14,091,844.457 ns"></ZoomStartTime>
+      <ZoomEndTime time="14,093,797.149 ns"></ZoomEndTime>
+      <Cursor1Time time="14,093,471.700 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="250"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="31" />
+   <wvobject type="logic" fp_name="/tb/i_vga/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/i_vga/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/i_vga/hsync">
+      <obj_property name="ElementShortName">hsync</obj_property>
+      <obj_property name="ObjectShortName">hsync</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/i_vga/vsync">
+      <obj_property name="ElementShortName">vsync</obj_property>
+      <obj_property name="ObjectShortName">vsync</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/i_vga/display_on">
+      <obj_property name="ElementShortName">display_on</obj_property>
+      <obj_property name="ObjectShortName">display_on</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/hpos">
+      <obj_property name="ElementShortName">hpos[9:0]</obj_property>
+      <obj_property name="ObjectShortName">hpos[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/vpos">
+      <obj_property name="ElementShortName">vpos[8:0]</obj_property>
+      <obj_property name="ObjectShortName">vpos[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/i_vga/pixel_clk">
+      <obj_property name="ElementShortName">pixel_clk</obj_property>
+      <obj_property name="ObjectShortName">pixel_clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/d_hpos">
+      <obj_property name="ElementShortName">d_hpos[9:0]</obj_property>
+      <obj_property name="ObjectShortName">d_hpos[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/d_vpos">
+      <obj_property name="ElementShortName">d_vpos[8:0]</obj_property>
+      <obj_property name="ObjectShortName">d_vpos[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/clk_en_cnt">
+      <obj_property name="ElementShortName">clk_en_cnt[3:0]</obj_property>
+      <obj_property name="ObjectShortName">clk_en_cnt[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/i_vga/clk_en">
+      <obj_property name="ElementShortName">clk_en</obj_property>
+      <obj_property name="ObjectShortName">clk_en</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/N_MIXER_PIPE_STAGES">
+      <obj_property name="ElementShortName">N_MIXER_PIPE_STAGES[31:0]</obj_property>
+      <obj_property name="ObjectShortName">N_MIXER_PIPE_STAGES[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/HPOS_WIDTH">
+      <obj_property name="ElementShortName">HPOS_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HPOS_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/VPOS_WIDTH">
+      <obj_property name="ElementShortName">VPOS_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">VPOS_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/H_DISPLAY">
+      <obj_property name="ElementShortName">H_DISPLAY[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_DISPLAY[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/H_FRONT">
+      <obj_property name="ElementShortName">H_FRONT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_FRONT[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/H_SYNC">
+      <obj_property name="ElementShortName">H_SYNC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_SYNC[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/H_BACK">
+      <obj_property name="ElementShortName">H_BACK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_BACK[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/V_DISPLAY">
+      <obj_property name="ElementShortName">V_DISPLAY[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_DISPLAY[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/V_BOTTOM">
+      <obj_property name="ElementShortName">V_BOTTOM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_BOTTOM[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/V_SYNC">
+      <obj_property name="ElementShortName">V_SYNC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_SYNC[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/V_TOP">
+      <obj_property name="ElementShortName">V_TOP[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_TOP[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/CLK_MHZ">
+      <obj_property name="ElementShortName">CLK_MHZ[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLK_MHZ[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/PIXEL_MHZ">
+      <obj_property name="ElementShortName">PIXEL_MHZ[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PIXEL_MHZ[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/H_SYNC_START">
+      <obj_property name="ElementShortName">H_SYNC_START[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_SYNC_START[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/H_SYNC_END">
+      <obj_property name="ElementShortName">H_SYNC_END[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_SYNC_END[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/H_MAX">
+      <obj_property name="ElementShortName">H_MAX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H_MAX[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/V_SYNC_START">
+      <obj_property name="ElementShortName">V_SYNC_START[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_SYNC_START[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/V_SYNC_END">
+      <obj_property name="ElementShortName">V_SYNC_END[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_SYNC_END[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/i_vga/V_MAX">
+      <obj_property name="ElementShortName">V_MAX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">V_MAX[31:0]</obj_property>
+   </wvobject>
+</wave_config>
