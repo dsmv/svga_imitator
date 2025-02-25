@@ -1,0 +1,518 @@
+set -Eeuo pipefail  # See the meaning in scripts/README.md
+# set -x  # Print each command
+
+setup_source_bash_already_run=1
+
+#-----------------------------------------------------------------------------
+#
+#   Protection against incorrect use
+#
+#-----------------------------------------------------------------------------
+
+if [ "$(basename "$0")" == bash ]
+then
+    printf "error: script \"%s\" should be sourced from another script, not from the terminal\n"  \
+        "$BASH_SOURCE" 1>&2
+
+    exit 1
+fi
+
+if [ "$0" == "$BASH_SOURCE" ]
+then
+    printf "error: script \"%s\" should be sourced from another script, not used alone\n"  \
+        "$0" 1>&2
+
+    exit 1
+fi
+
+#-----------------------------------------------------------------------------
+#
+#   Directory setup
+#
+#-----------------------------------------------------------------------------
+
+package_dir=$(readlink -f "$(dirname "${BASH_SOURCE[0]}")/../..")
+
+bin_dir="$package_dir/bin"
+board_dir="$package_dir/boards"
+lab_dir="$package_dir/labs"
+peripheral_dir="$package_dir/peripherals"
+script_dir="$package_dir/scripts"
+
+#-----------------------------------------------------------------------------
+
+adj_path_for_gowin_win ()
+{
+    if    [ "$OSTYPE" = "cygwin" ]  \
+       || [ "$OSTYPE" = "msys"   ]
+    then
+        echo ${1/#\/[[:alpha:]]\//${1:1:1}:\/}
+    else
+        echo $1
+    fi
+}
+
+#-----------------------------------------------------------------------------
+
+script=$(basename "$0")
+log="$PWD/log.txt"
+
+if [[ $script =~ check_setup_and_choose_fpga_board ]]
+then
+    offer_to_create_all_run_dirs=1
+else
+    offer_to_create_all_run_dirs=0
+fi
+
+if [[ $script =~ choose.*fpga_board ]]
+then
+    offer_to_create_a_new_fpga_board_select_file=1
+else
+    offer_to_create_a_new_fpga_board_select_file=0
+
+    cd $(dirname "$0")
+    mkdir -p run
+    cd run
+
+    inside_run_dir=1
+fi
+
+lab_name=$(basename "$(readlink -f ..)")
+
+#-----------------------------------------------------------------------------
+#
+#   General routines
+#
+#-----------------------------------------------------------------------------
+
+info ()
+{
+    # The "if" below is a protection against % in arguments
+    # which is interpreted as a format by printf.
+    #
+    # However this method has disadvantage:
+    # It prints "\n" for "\n" instead of a newline.
+
+    if [[ "$*" == *"%"* ]] || [[ "$*" == *"\\"* ]] ; then
+        printf "\n%s: %s\n" "$script" "$*" 1>&2
+    else
+        printf "\n%s: $*\n" "$script"      1>&2
+    fi
+}
+
+#-----------------------------------------------------------------------------
+
+error ()
+{
+    info error: $*
+
+    # Alternative way to check for MacOS:
+    # [ ${OSTYPE/[0-9]*/} = "darwin" ]
+ 
+    if    [  "$OSTYPE" = "linux-gnu" ]  \
+       || [  "$OSTYPE" = "cygwin"    ]  \
+       || [  "$OSTYPE" = "msys"      ]  \
+       || [[ "$OSTYPE" = "darwin"*   ]]
+    then
+        read -n 1 -p "Press any key "
+    fi
+
+    exit 1
+}
+
+#-----------------------------------------------------------------------------
+
+warning ()
+{
+    info warning: $*
+}
+
+#-----------------------------------------------------------------------------
+
+is_command_available ()
+{
+    command -v $1 &> /dev/null
+}
+
+#-----------------------------------------------------------------------------
+
+is_command_available_or_error ()
+{
+    is_command_available $1 ||  \
+        error "program $1${2-} is not in the path or cannot be run${3-}"
+}
+
+#-----------------------------------------------------------------------------
+
+is_command_available_or_error_and_install ()
+{
+    if [ -n "${2-}" ]; then
+        package=$2
+    else
+        package=$1
+    fi
+
+    if [ "$OSTYPE" = "linux-gnu" ]; then
+        how_to_install=". To install, run either: \"sudo apt-get install $package\" or \"sudo yum install $package\". If it does not work, google the instructions."
+    elif [[ "$OSTYPE" = "darwin"* ]]; then
+        how_to_install=". To install, run: \"brew install $package\". If it does not work, google the instructions."
+    else
+        how_to_install=
+    fi
+
+    is_command_available_or_error $1 "" "$how_to_install"
+}
+
+#-----------------------------------------------------------------------------
+#
+#   Protection against running under WSL
+#
+#-----------------------------------------------------------------------------
+
+if [ "$OSTYPE" = "linux-gnu" ] && [ -n "${WSL_DISTRO_NAME-}" ]
+then
+    error "you are running not under true Linux,"                               \
+          "but under Windows Subsystem for Linux (WSL)."                        \
+          "This mode of running is not supported at the moment."                \
+          "You can run either under Linux,"                                     \
+          "or under Windows with bash from Git for Windows package."            \
+          "If you choose to use Windows,"                                       \
+          "download Git from https://gitforwindows.org,"                        \
+          "then install it with an option"                                      \
+          "to include other Linux utilities"                                    \
+          "that override Windows programs."                                     \
+          "Make sure that bash from Git is in the Windows path."                \
+          "Its location is \"C:\\\\Program Files\\\\Git\\\\bin\\\\bash.exe\"."  \
+          "Create Git bash association with .bash file extension."              \
+          "Under this setup, all simulation and synthesis programs"             \
+          "are already tested"                                                  \
+          "so you are going to have less troubleshooting."
+fi
+
+#-----------------------------------------------------------------------------
+#
+#   Platform-specific workarounds
+#
+#-----------------------------------------------------------------------------
+
+# A workaround for a find problem when running bash under Microsoft Windows
+
+find_to_run=find
+true_find=/usr/bin/find
+
+if [ -x $true_find ]
+then
+    find_to_run=$true_find
+fi
+
+if [ "$OSTYPE" = "cygwin" ] || [ "$OSTYPE" = "msys" ] ; then
+    exe=".exe"
+else
+    exe=
+fi
+
+#-----------------------------------------------------------------------------
+#
+#   Tool setup:
+#
+#   Intel FPGA Quartus and Questa, licensed by Intel from Siemens EDA
+#   Gowin IDE
+#   Open Lane
+#   Icarus Verilog
+#
+#-----------------------------------------------------------------------------
+
+source "$script_dir/steps/00_setup_intel_fpga.source_bash"
+source "$script_dir/steps/00_setup_gowin.source_bash"
+source "$script_dir/steps/00_setup_efinity.source_bash"
+source "$script_dir/steps/00_setup_xilinx.source_bash"
+source "$script_dir/steps/00_setup_open_lane.source_bash"
+source "$script_dir/steps/00_setup_icarus.source_bash"
+source "$script_dir/steps/00_setup_yosys.source_bash"
+source "$script_dir/steps/00_setup_rars.source_bash"
+
+#-----------------------------------------------------------------------------
+#
+#   FPGA board setup
+#
+#-----------------------------------------------------------------------------
+
+create_fpga_board_select_file()
+{
+    > "$select_file"
+
+    for i_fpga_board in $available_fpga_boards
+    do
+        comment="# "
+        [ $i_fpga_board == $fpga_board ] && comment=""
+        printf "$comment%s\n" "$i_fpga_board" >> "$select_file"
+    done
+
+    info "Created an FPGA board selection file: \"$select_file\""
+}
+
+#-----------------------------------------------------------------------------
+
+setup_run_directory_for_fpga_synthesis()
+{
+    dir="${1:-.}"
+    parent_dir=$(readlink -f "$dir/..")
+
+    rm -rf "$dir"/*
+
+    case $fpga_toolchain in
+    quartus)
+        setup_run_directory_for_fpga_synthesis_quartus "$dir" "$parent_dir"
+        ;;
+    efinity)
+        setup_run_directory_for_fpga_synthesis_efinity "$dir" "$parent_dir"
+        ;;
+    gowin)
+        setup_run_directory_for_fpga_synthesis_gowin   "$dir" "$parent_dir"
+        ;;
+    xilinx)
+        setup_run_directory_for_fpga_synthesis_xilinx  "$dir" "$parent_dir"
+        ;;
+    yosys)
+        setup_run_directory_for_fpga_synthesis_yosys  "$dir" "$parent_dir"
+        ;;
+    *)
+        error "Unsupported FPGA synthesis toolchain: $fpga_toolchain." \
+              " Currently supported: quartus, xilinx, gowin, yosys."
+        ;;
+    esac
+}
+
+#-----------------------------------------------------------------------------
+
+create_new_run_directories_for_fpga_synthesis()
+{
+    $find_to_run "$lab_dir" -name '*synthesize_for_fpga.bash' \
+        | while read file
+    do
+        dir=$(readlink -f "$(dirname "$file")/run")
+        info "Setting up: \"$dir\""
+        mkdir -p "$dir"
+        setup_run_directory_for_fpga_synthesis $dir
+    done
+}
+
+#-----------------------------------------------------------------------------
+
+update_fpga_toolchain_var ()
+{
+    case $fpga_board in
+
+        # Yosys should be the first because of * later
+
+        *_yosys )
+
+            fpga_toolchain=yosys
+        ;;
+
+        dk_dev_3c120n                        | \
+        marsohod_mcy112                      | \
+        marsohod_mcy316                      | \
+        de0                                  | \
+        de1                                  | \
+        de2                                  | \
+        omdazz_epm570_quartus_13_1_or_older  )
+
+            fpga_toolchain=quartus
+            use_old_version_of_quartus=1
+        ;;
+
+        alinx_ax4010*                    | \
+        c5gx*                            | \
+        de0_cv                           | \
+        de0_nano*                        | \
+        de0_nano_soc*                    | \
+        de1_soc                          | \
+        de2_115                          | \
+        de10_lite*                       | \
+        de10_nano*                       | \
+        emooc_cc                         | \
+        omdazz*                          | \
+        piswords6                        | \
+        qmtech_c4_starter                | \
+        rzrd*                            | \
+        saylinx*                         | \
+        step_max10                       | \
+        terasic_sockit                   | \
+        zeowaa*                          )
+
+            fpga_toolchain=quartus
+            use_old_version_of_quartus=0
+        ;;
+
+        runber                           | \
+        marsohod3gw2*                    | \
+        tang_*                           )
+
+            fpga_toolchain=gowin
+        ;;
+
+        trion_t20                        | \
+        fireant                          )
+
+            fpga_toolchain=efinity
+        ;;
+
+        alinx_ax7035b*                   | \
+        arty_a7*                         | \
+        arty_s7                          | \
+        basys3                           | \
+        cmod_a7                          | \
+        cmod_s7                          | \
+        eclypse_z7                       | \
+        nexys4                           | \
+        nexys4_ddr                       | \
+        nexys_a7*                        | \
+        qmtech_kintex_7                  | \
+        zybo_z7                          )
+
+            fpga_toolchain=xilinx
+        ;;
+
+        *)
+            fpga_toolchain=none
+        ;;
+    esac
+}
+
+#-----------------------------------------------------------------------------
+
+fpga_board_setup ()
+{
+    fpga_toolchain=none
+
+    if ! [[ $script =~ fpga ]] ; then
+        return
+    fi
+
+    #-------------------------------------------------------------------------
+
+    hackathon_top=../hackathon_top.sv
+
+    if [ -f "$hackathon_top" ]
+    then
+        fpga_board=$(grep -o '^// Board configuration: [[:alnum:]_]*$' "$hackathon_top" \
+            | sed 's|// Board configuration: ||' || true)
+
+        if [ -n "$fpga_board" ]
+        then
+            update_fpga_toolchain_var
+            return
+        fi
+    fi
+
+    #-------------------------------------------------------------------------
+
+    select_file="$package_dir/fpga_board_selection"
+
+    current_board_message=
+
+    if [ -f "$select_file" ]
+    then
+        # Consider making it more simple
+        # fpga_board=$(grep -m 1 -o '^[[:alnum:]_]*$' "$select_file" || true)
+
+        fpga_board=$(grep -o '^[^#/-]*' "$select_file" | grep -m 1 -o '^[[:alnum:]_]*' || true)
+        select_file_contents=$(cat "$select_file")
+
+        if [ -z "$fpga_board" ] ; then
+            offer_to_create_a_new_fpga_board_select_file=1
+        elif [ $offer_to_create_a_new_fpga_board_select_file = 1 ] ; then
+            current_board_message="The currently selected FPGA board: $fpga_board. "
+        fi
+    fi
+
+    #-------------------------------------------------------------------------
+
+    # TODO: Remove else after testing on Linux and Windows
+
+    if [[ "$OSTYPE" = "darwin"*   ]] ; then
+      available_fpga_boards=$($find_to_run "$board_dir" -mindepth 1 -maxdepth 1 -type d | xargs -I % -L 1 basename '%' | sort | tr "\r\n" " ")
+    else
+      available_fpga_boards=$($find_to_run "$board_dir" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort | tr "\r\n" " ")
+    fi
+
+    if    ! [ -f "$select_file" ]  \
+       ||   [ $offer_to_create_a_new_fpga_board_select_file = 1 ]
+    then
+        info "${current_board_message}Please select an FPGA board amoung the following supported:"
+        PS3="Your choice (a number): "
+
+        select fpga_board in $available_fpga_boards exit
+        do
+            if [ -z "$fpga_board" ] ; then
+                info "Invalid FPGA board choice, please choose one of the listed numbers again"
+                continue
+            fi
+
+            if [ $fpga_board == "exit" ] ; then
+                info "a new FPGA board is not selected, please run the script again"
+                exit 0
+            fi
+
+            info "FPGA board selected: $fpga_board"
+            break
+        done
+
+        create_fpga_board_select_file
+
+        if [ $offer_to_create_all_run_dirs = 1 ]
+        then
+            read -n 1 -r -p "Would you like to create the new run directories for the synthesis of all labs in the package, based on your FPGA board selection? We recommend to do this if you plan to work with synthesis GUI rather than with the synthesis scripts. [y/n] "
+            printf "\n"
+
+            if [[ "$REPLY" =~ ^[Yy]$ ]]; then
+                printf "\n"
+
+                update_fpga_toolchain_var
+                create_new_run_directories_for_fpga_synthesis
+            fi
+        fi
+    fi
+
+    if ! [[ " $available_fpga_boards " =~ " $fpga_board " ]] ; then
+        # This error may happen if people mess with the selection file
+
+        error "The selected FPGA board $fpga_board"  \
+              "is not one of the available boards: $available_fpga_boards"
+    fi
+
+    #-------------------------------------------------------------------------
+
+    update_fpga_toolchain_var
+}
+
+#-----------------------------------------------------------------------------
+#
+#   Calling routines
+#
+#-----------------------------------------------------------------------------
+
+fpga_board_setup
+
+case $fpga_toolchain in
+    quartus  )
+        intel_fpga_setup_quartus
+
+        if [ -z "${MGLS_LICENSE_FILE-}" ] ; then
+            intel_fpga_setup_questa
+        fi
+    ;;
+
+    gowin   ) gowin_setup_ide     ;;
+    efinity ) efinity_setup_ide   ;;
+    xilinx  ) xilinx_setup_vivado ;;
+    yosys   ) setup_yosys         ;;
+esac
+
+openlane_setup
+icarus_verilog_setup
+
+if [ -f ../program.s ] ; then
+    rars_setup
+fi

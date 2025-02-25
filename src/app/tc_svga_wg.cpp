@@ -46,8 +46,10 @@ void tc_svga_wg::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
     //painter.drawImage( 0, 0, _p_image );
-    painter.setPen( Qt::blue);
-    painter.drawLine( 0,0, 1023, 767);
-    painter.drawRect( 0,0,1025, 769);
+    // painter.setPen( Qt::blue);
+    // painter.drawLine( 0,0, 1023, 767);
+    // painter.drawRect( 0,0,1025, 769);
+
+    painter.drawImage( 0, 0, *(_p_global_data->_p_svga_image) );
 
 }

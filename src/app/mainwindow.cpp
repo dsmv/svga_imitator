@@ -43,13 +43,19 @@ MainWindow::MainWindow()
 
    _p_global_data = new tf_global_data();
 
-   _label_screen_size = new QLabel( "SVGA: 1024x768 ");
-   _label_current_pos = new QLabel( " POS: 100 25 ");
+   _label_screen_size = new QLabel( " ");
+   _label_current_pos = new QLabel( " ");
+   _label_message = new QLabel( " ");
 
    _status_bar = this->statusBar();
 //   _status_bar->addPermanentWidget( _label_screen_size );
    _status_bar->addWidget( _label_screen_size );
    _status_bar->addWidget( _label_current_pos );
+   _status_bar->addPermanentWidget( _label_message );
+
+   _p_message_timer = new QTimer();
+   _p_message_timer->setSingleShot( true );
+   bool ret = connect( _p_message_timer, &QTimer::timeout, this, &MainWindow::onMessageTimer );
 
    QString str = QString( "Start");
    _status_bar->showMessage( str, 2000 );
@@ -63,6 +69,7 @@ MainWindow::MainWindow()
 
    connect( _p_global_data, &tf_global_data::updateScreenSize, this, &MainWindow::updateScreenSize );
    connect( _p_global_data, &tf_global_data::updateScreenPos , this, &MainWindow::updateScreenPos );
+   connect( _p_global_data, &tf_global_data::showStatusMessage , this, &MainWindow::showStatusMessage );
 
 #ifdef Q_OS_MAC
    setUnifiedTitleAndToolBarOnMac(true);
@@ -73,7 +80,7 @@ MainWindow::MainWindow()
     this->setMinimumWidth( 1044 );
 
     actionSvga();
-    actionLog();
+    //actionLog();
 
 
    
@@ -88,6 +95,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateScreenSize( uint h_size, uint v_size )
 {
+   char str[128];
+   sprintf( str, " SVGA:  %-5dx%5d ", h_size, v_size );
+   QString qs = QString::fromLatin1( str );
+   _label_screen_size->setText( qs );
+   emit updateSvgaScreen();
 
 }
 
@@ -97,6 +109,7 @@ void MainWindow::updateScreenPos(  uint cadr, uint h_pos, uint v_pos )
    sprintf( str, " Cadr: %4d Pos: %5d %5d ", cadr, h_pos, v_pos );
    QString qs = QString::fromLatin1( str );
    _label_current_pos->setText( qs );
+   emit updateSvgaScreen();
 }
 
 void MainWindow::changeEvent(QEvent *event)
@@ -151,7 +164,36 @@ void MainWindow::actionLog()
 
 void MainWindow::actionSvga()
 {
+   if( tc_svga::_p_instance)
+   {
+      tc_svga::_p_instance->show();
+      tc_svga::_p_instance->setFocus();
+
+   } else 
+   {
     tc_svga *oDw = new tc_svga( 0, _p_global_data);
     addMdiChild(oDw);
+
+    connect( this, &MainWindow::updateSvgaScreen, oDw, &tc_svga::updateSvgaScreen );
+
+   }
 }
 
+
+void MainWindow::showStatusMessage(QString &str, uint time_ms)
+{
+   _label_message->setText( str );
+   if( time_ms )
+   {
+      _p_message_timer->setInterval( time_ms );
+      _p_message_timer->setSingleShot( true );
+      _p_message_timer->start();
+      //QTimer::singleShot(time_ms, Qt::CoarseTimer, this, SLOT(onMessageTimer()));
+   }
+}
+
+void MainWindow::onMessageTimer()
+{
+   _label_message->setText( "" );
+   _p_message_timer->stop();
+}

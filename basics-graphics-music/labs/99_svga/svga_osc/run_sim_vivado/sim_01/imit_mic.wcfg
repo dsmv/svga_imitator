@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb" />
+            <top_module name="tb_01_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1.500185833 ms"></ZoomStartTime>
+      <ZoomEndTime time="11.701300834 ms"></ZoomEndTime>
+      <Cursor1Time time="10.001115000 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="282"></NameColumnWidth>
+      <ValueColumnWidth column_width="86"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="24" />
+   <wave_markers>
+      <marker label="" time="31305000" />
+   </wave_markers>
+   <wvobject type="logic" fp_name="/tb/sim_inn441/sck">
+      <obj_property name="ElementShortName">sck</obj_property>
+      <obj_property name="ObjectShortName">sck</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/sim_inn441/ws">
+      <obj_property name="ElementShortName">ws</obj_property>
+      <obj_property name="ObjectShortName">ws</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/sim_inn441/lr">
+      <obj_property name="ElementShortName">lr</obj_property>
+      <obj_property name="ObjectShortName">lr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/sim_inn441/sdo">
+      <obj_property name="ElementShortName">sdo</obj_property>
+      <obj_property name="ObjectShortName">sdo</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_inn441/adc_sample">
+      <obj_property name="ElementShortName">adc_sample[23:0]</obj_property>
+      <obj_property name="ObjectShortName">adc_sample[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/sim_inn441/sd">
+      <obj_property name="ElementShortName">sd</obj_property>
+      <obj_property name="ObjectShortName">sd</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_inn441/state">
+      <obj_property name="ElementShortName">state[31:0]</obj_property>
+      <obj_property name="ObjectShortName">state[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_inn441/sck_cnt">
+      <obj_property name="ElementShortName">sck_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sck_cnt[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_inn441/sck_last">
+      <obj_property name="ElementShortName">sck_last[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sck_last[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb/sim_inn441/phi">
+      <obj_property name="ElementShortName">phi</obj_property>
+      <obj_property name="ObjectShortName">phi</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb/sim_inn441/adc_sample_f">
+      <obj_property name="ElementShortName">adc_sample_f</obj_property>
+      <obj_property name="ObjectShortName">adc_sample_f</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_inn441/ampl">
+      <obj_property name="ElementShortName">ampl[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ampl[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb/sim_inn441/delta_phi">
+      <obj_property name="ElementShortName">delta_phi</obj_property>
+      <obj_property name="ObjectShortName">delta_phi</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb/sim_inn441/current_period">
+      <obj_property name="ElementShortName">current_period</obj_property>
+      <obj_property name="ObjectShortName">current_period</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb/sim_inn441/fc">
+      <obj_property name="ElementShortName">fc</obj_property>
+      <obj_property name="ObjectShortName">fc</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb/sim_inn441/s_next_time">
+      <obj_property name="ElementShortName">s_next_time</obj_property>
+      <obj_property name="ObjectShortName">s_next_time</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb/sim_inn441/s_current_time">
+      <obj_property name="ElementShortName">s_current_time</obj_property>
+      <obj_property name="ObjectShortName">s_current_time</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb/sim_inn441/s_current_freq_100">
+      <obj_property name="ElementShortName">s_current_freq_100</obj_property>
+      <obj_property name="ObjectShortName">s_current_freq_100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_inn441/s_index">
+      <obj_property name="ElementShortName">s_index[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_index[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_inn441/sck_period">
+      <obj_property name="ElementShortName">sck_period[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sck_period[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_inn441/s_freq_100">
+      <obj_property name="ElementShortName">s_freq_100[0:4][31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_freq_100[0:4][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_inn441/s_time_ms">
+      <obj_property name="ElementShortName">s_time_ms[0:4][31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_time_ms[0:4][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_inn441/s_ampl">
+      <obj_property name="ElementShortName">s_ampl[0:4][31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_ampl[0:4][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_inn441/s_cnt">
+      <obj_property name="ElementShortName">s_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">s_cnt[31:0]</obj_property>
+   </wvobject>
+</wave_config>

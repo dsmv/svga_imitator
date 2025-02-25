@@ -38,6 +38,12 @@ class MainWindow : public QMainWindow
    ~MainWindow();
    void addMdiChild(QWidget *);
 
+
+   CS_SIGNAL_1(Public, void updateSvgaScreen());
+   CS_SIGNAL_2(updateSvgaScreen);
+
+   void showStatusMessage(QString &str, uint time_ms);
+
  protected:
    void changeEvent(QEvent *event) override;
 
@@ -61,8 +67,14 @@ class MainWindow : public QMainWindow
 
     QLabel      *_label_screen_size;
     QLabel      *_label_current_pos;
+    QLabel      *_label_message;
     QStatusBar  *_status_bar;
+
+    QTimer      *_p_message_timer;
+
+    void onMessageTimer();
 };
+
 
 
 #endif

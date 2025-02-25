@@ -33,6 +33,8 @@ class tf_global_data : public QObject
 
         svga_state_t        _svga;
 
+        QImage              *_p_svga_image;
+
         tf_global_data();
         ~tf_global_data();
 
@@ -42,6 +44,9 @@ class tf_global_data : public QObject
 
         CS_SIGNAL_1(Public, void updateScreenPos( uint cadr, uint h_pos, uint v_pos));
         CS_SIGNAL_2(updateScreenPos, cadr, h_pos, v_pos);
+
+        CS_SIGNAL_1(Public, void showStatusMessage(QString &str, uint time_ms));
+        CS_SIGNAL_2(showStatusMessage, str, time_ms);
 
         void append_log( uint id, QString &str );
 

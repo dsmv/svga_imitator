@@ -23,6 +23,7 @@ class tc_svga_wg : public QWidget
 
         void paintEvent(QPaintEvent *event);
 
+
     private:
 
         uint _id;

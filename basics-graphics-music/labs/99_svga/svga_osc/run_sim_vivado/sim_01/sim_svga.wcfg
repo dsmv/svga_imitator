@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="\$unit_sim_inn441_sv_3974464201 " />
+            <top_module name="tb" />
+            <top_module name="tb_01_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="15.079549101 ms"></ZoomEndTime>
+      <Cursor1Time time="10.554259100 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="254"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject type="logic" fp_name="/tb/sim_svga/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/sim_svga/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/sim_svga/display_on">
+      <obj_property name="ElementShortName">display_on</obj_property>
+      <obj_property name="ObjectShortName">display_on</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/x">
+      <obj_property name="ElementShortName">x[10:0]</obj_property>
+      <obj_property name="ObjectShortName">x[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/y">
+      <obj_property name="ElementShortName">y[9:0]</obj_property>
+      <obj_property name="ObjectShortName">y[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/sim_svga/hsync">
+      <obj_property name="ElementShortName">hsync</obj_property>
+      <obj_property name="ObjectShortName">hsync</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/sim_svga/vsync">
+      <obj_property name="ElementShortName">vsync</obj_property>
+      <obj_property name="ObjectShortName">vsync</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/red">
+      <obj_property name="ElementShortName">red[3:0]</obj_property>
+      <obj_property name="ObjectShortName">red[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/green">
+      <obj_property name="ElementShortName">green[3:0]</obj_property>
+      <obj_property name="ObjectShortName">green[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/blue">
+      <obj_property name="ElementShortName">blue[3:0]</obj_property>
+      <obj_property name="ObjectShortName">blue[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/color">
+      <obj_property name="ElementShortName">color[31:0]</obj_property>
+      <obj_property name="ObjectShortName">color[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/index">
+      <obj_property name="ElementShortName">index[31:0]</obj_property>
+      <obj_property name="ObjectShortName">index[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/clk_mhz">
+      <obj_property name="ElementShortName">clk_mhz[31:0]</obj_property>
+      <obj_property name="ObjectShortName">clk_mhz[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/screen_width">
+      <obj_property name="ElementShortName">screen_width[31:0]</obj_property>
+      <obj_property name="ObjectShortName">screen_width[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/screen_height">
+      <obj_property name="ElementShortName">screen_height[31:0]</obj_property>
+      <obj_property name="ObjectShortName">screen_height[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/w_red">
+      <obj_property name="ElementShortName">w_red[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_red[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/w_green">
+      <obj_property name="ElementShortName">w_green[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_green[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/w_blue">
+      <obj_property name="ElementShortName">w_blue[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_blue[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/w_x">
+      <obj_property name="ElementShortName">w_x[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_x[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/sim_svga/w_y">
+      <obj_property name="ElementShortName">w_y[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_y[31:0]</obj_property>
+   </wvobject>
+</wave_config>

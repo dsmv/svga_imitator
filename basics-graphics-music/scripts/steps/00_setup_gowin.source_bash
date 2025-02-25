@@ -1,0 +1,523 @@
+expected_source_script=00_setup.source_bash
+
+if [ -z "$BASH_SOURCE" ]
+then
+    printf "script \"%s\" should be sourced from \"%s\"\n"  \
+        "$0" "$expected_source_script" 1>&2
+
+    exit 1
+fi
+
+this_script=$(basename "${BASH_SOURCE[0]}")
+source_script=$(basename "${BASH_SOURCE[1]}")
+
+if [ -z "$source_script" ]
+then
+    printf "script \"%s\" should be sourced from  \"%s\"\n"  \
+        "$this_script" "$expected_source_script" 1>&2
+
+    return 1
+fi
+
+if [ "$source_script" != $expected_source_script ]
+then
+    printf "script \"%s\" should be sourced from  \"%s\", not \"%s\"\n"  \
+        "$this_script" "$expected_source_script" "$source_script" 1>&2
+
+    exit 1
+fi
+
+#-----------------------------------------------------------------------------
+
+gowin_finish_setup_and_report_where_found ()
+{
+    # info                 "Found Gowin$1:"
+    printf "%s\n" "$script: Found Gowin$1:"
+
+    #-------------------------------------------------------------------------
+
+    if [ -n "${GOWIN_VERSION_DIR-}" ]
+    then
+               # info "GOWIN_VERSION_DIR=$GOWIN_VERSION_DIR"
+        printf "%s\n" "GOWIN_VERSION_DIR=$GOWIN_VERSION_DIR"
+
+                    [ -d "$GOWIN_VERSION_DIR" ] ||
+        error "directory '$GOWIN_VERSION_DIR' expected"
+
+                    [ -d "$GOWIN_VERSION_DIR/IDE" ]  ||
+        error "directory '$GOWIN_VERSION_DIR/IDE' expected"
+
+                    [ -d "$GOWIN_VERSION_DIR/Programmer" ]  ||
+        error "directory '$GOWIN_VERSION_DIR/Programmer' expected"
+
+                    [ -d "$GOWIN_VERSION_DIR/IDE/bin" ]  ||
+        error "directory '$GOWIN_VERSION_DIR/IDE/bin' expected"
+
+                    [ -d "$GOWIN_VERSION_DIR/Programmer/bin" ]  ||
+        error "directory '$GOWIN_VERSION_DIR/Programmer/bin' expected"
+
+        #---------------------------------------------------------------------
+
+        export PATH="${PATH:+$PATH:}$GOWIN_VERSION_DIR/IDE/bin:$GOWIN_VERSION_DIR/Programmer/bin"
+
+        gowin_ide_full_real_path="$GOWIN_VERSION_DIR/IDE/bin/gw_ide$exe"
+        gowin_sh_full_real_path="$GOWIN_VERSION_DIR/IDE/bin/gw_sh$exe"
+        gowin_prog_full_real_path="$GOWIN_VERSION_DIR/Programmer/bin/programmer_cli$exe"
+    fi
+
+    #-------------------------------------------------------------------------
+
+    # info "PATH=$PATH"
+    # info "gowin_ide_full_real_path=$gowin_ide_full_real_path"
+    # info "gowin_sh_full_real_path=$gowin_sh_full_real_path"
+    # info "gowin_prog_full_real_path=$gowin_prog_full_real_path"
+
+    printf "%s\n" "PATH=$PATH"
+    printf "%s\n" "gowin_ide_full_real_path=$gowin_ide_full_real_path"
+    printf "%s\n" "gowin_sh_full_real_path=$gowin_sh_full_real_path"
+    printf "%s\n" "gowin_prog_full_real_path=$gowin_prog_full_real_path"
+
+                      [ -f "$gowin_ide_full_real_path" ] &&
+                      [ -x "$gowin_ide_full_real_path" ] ||
+    error "executable file '$gowin_ide_full_real_path' expected"
+
+                      [ -f "$gowin_sh_full_real_path" ] &&
+                      [ -x "$gowin_sh_full_real_path" ] ||
+    error "executable file '$gowin_sh_full_real_path' expected"
+
+                      [ -f "$gowin_prog_full_real_path" ] &&
+                      [ -x "$gowin_prog_full_real_path" ] ||
+    error "executable file '$gowin_prog_full_real_path' expected"
+}
+
+#-----------------------------------------------------------------------------
+
+gowin_try_install_dir ()
+{
+    local dir="$1"
+
+    [ -z "${GOWIN_VERSION_DIR-}" ] && [ -n "${dir-}" ] || return 0
+
+    attempt_gowin_install_parent_dirs="${attempt_gowin_install_parent_dirs:+$attempt_gowin_install_parent_dirs or }'$dir'"
+
+    if [ "$OSTYPE" = "cygwin" ] ||
+       [ "$OSTYPE" = "msys"   ]
+    then
+        # Windows is not case sensitive
+        Gowin_gowin="Gowin"
+    else
+        Gowin_gowin="Gowin gowin"
+    fi
+
+    for gowin in $Gowin_gowin
+    do
+        [ -d "$dir/$gowin" ] || continue
+
+        if [ -d "$dir/$gowin/IDE" ] ; then
+            GOWIN_VERSION_DIR="$dir/$gowin"
+            gowin_finish_setup_and_report_where_found " inside '$dir'"
+            return
+        fi
+
+        find_dir="$dir/$gowin"
+        find_opt="-mindepth 1 -maxdepth 1 -type d -print"
+
+        GOWIN_VERSION_DIR=$($find_to_run "$find_dir" $find_opt | sort | tail -1)
+
+        if [ -n "$GOWIN_VERSION_DIR" ]
+        then
+            all_version_dirs=$($find_to_run "$find_dir" $find_opt | xargs echo)
+
+            [ "$GOWIN_VERSION_DIR" == "$all_version_dirs" ] ||
+                warning "multiple subdirectories inside '$find_dir': '$all_version_dirs'"
+
+            gowin_finish_setup_and_report_where_found " inside subdirectory of '$dir'"
+            return
+        fi
+    done
+}
+
+#-----------------------------------------------------------------------------
+
+gowin_setup_ide ()
+{
+    if ! ( [  "$OSTYPE" = "linux-gnu" ]  ||
+           [  "$OSTYPE" = "cygwin"    ]  ||
+           [  "$OSTYPE" = "msys"      ]  ||
+           [[ "$OSTYPE" = "darwin"*   ]] && [ $(uname -m) = arm64 ] )
+    then
+        error "Gowin IDE is not working on your platform (Mac x64?)"
+        return
+    fi
+
+    #-------------------------------------------------------------------------
+
+    if [ -n "${GOWIN_VERSION_DIR-}" ]
+    then
+        gowin_finish_setup_and_report_where_found " using GOWIN_VERSION_DIR"
+        return
+    fi
+
+    #-------------------------------------------------------------------------
+
+    if   is_command_available gw_sh$exe &&
+       ( is_command_available openFPGALoader &&       [ "$OSTYPE" = "linux-gnu" ] ||
+         is_command_available programmer_cli$exe && ( [ "$OSTYPE" = "cygwin"    ] ||
+                                                      [ "$OSTYPE" = "msys"      ] ) )
+    then
+        gowin_ide_full_real_path=$(command -v gw_ide$exe)
+        gowin_sh_full_real_path=$(command -v gw_sh$exe)
+        gowin_prog_full_real_path=$(command -v programmer_cli$exe)
+
+        gowin_finish_setup_and_report_where_found " using PATH"
+        return
+    fi
+
+    #-------------------------------------------------------------------------
+
+    gowin_try_install_dir "${GOWIN_HOME-}"
+
+    if [  "$OSTYPE" = "linux-gnu"  ] ||
+       [[ "$OSTYPE" = "darwin"*   ]]
+    then
+        gowin_try_install_dir "$HOME"
+        gowin_try_install_dir /opt
+        gowin_try_install_dir /tools
+
+    elif [ "$OSTYPE" = "cygwin" ] ||
+         [ "$OSTYPE" = "msys"   ]
+    then
+        gowin_try_install_dir /c
+        gowin_try_install_dir /d
+        gowin_try_install_dir /e
+    fi
+
+    #-------------------------------------------------------------------------
+
+    if [ -z "${GOWIN_VERSION_DIR-}" ]
+    then
+        error "expected to find 'Gowin/IDE' or 'gowin/IDE',            \
+              any subdirectory of 'Gowin' or 'gowin'"                  \
+              "in ${attempt_gowin_install_parent_dirs}."               \
+              "The Gowin installation home location"                   \
+              "can be set by GOWIN_HOME environment variable,"         \
+              "such as 'GOWIN_HOME=/home/verilog'."                    \
+              " You can also use GOWIN_VERSION_DIR"                    \
+              " to specify the version subtree location,"              \
+              "such as 'GOWIN_VERSION_DIR=/home/verilog/gowin/0.99'."
+    fi
+
+    if [[ "$OSTYPE" = "darwin"* ]]
+    then
+        export DYLD_FRAMEWORK_PATH="${DYLD_FRAMEWORK_PATH:+$DYLD_FRAMEWORK_PATH:}$GOWIN_VERSION_DIR/IDE/lib"
+        export DYLD_LIBRARY_PATH="${DYLD_LIBRARY_PATH:+$DYLD_LIBRARY_PATH:}$GOWIN_VERSION_DIR/IDE/lib"
+    fi
+}
+
+#-----------------------------------------------------------------------------
+
+setup_run_directory_for_fpga_synthesis_gowin ()
+{
+    dir="$1"
+    main_src_dir="$2"
+
+    cat "$board_dir/$fpga_board/board_specific.tcl" > "$dir/fpga_project.tcl"
+
+    for verilog_src_dir in        \
+        "$main_src_dir"           \
+        "$board_dir/$fpga_board"  \
+        "$peripheral_dir"         \
+        "$lab_dir/common"
+    do
+        # TODO: Remove else after testing on Linux and Windows
+
+        if [[ "$OSTYPE" = "darwin"* ]]
+        then
+            $find_to_run  \
+                "$(adj_path_for_gowin_win "$verilog_src_dir")"  \
+                -type f \( -name '*.sv' -not -name tb.sv -o -name '*.v' \)  \
+                | xargs -L 1 -I % echo "add_file -type verilog %"  \
+                >> "$dir/fpga_project.tcl"
+        else
+            $find_to_run  \
+                "$(adj_path_for_gowin_win "$verilog_src_dir")"  \
+                -type f \( -name '*.sv' -not -name tb.sv -o -name '*.v' \)  \
+                -printf "add_file -type verilog %p\n"  \
+                >> "$dir/fpga_project.tcl"
+        fi
+    done
+
+    echo "add_file -type cst $(adj_path_for_gowin_win "$board_dir")/$fpga_board/board_specific.cst" >> "$dir/fpga_project.tcl"
+    echo "add_file -type sdc $(adj_path_for_gowin_win "$board_dir")/$fpga_board/board_specific.sdc" >> "$dir/fpga_project.tcl"
+    echo "run all" >> "$dir/fpga_project.tcl"
+
+    if [ -e "$board_dir/$fpga_board/fpga_project_01.gprj" ] &&
+       [ -e "$board_dir/$fpga_board/fpga_project_02.gprj" ]
+    then
+        cat "$board_dir/$fpga_board/fpga_project_01.gprj" > "$dir/fpga_project.gprj"
+
+        for verilog_src_dir in        \
+            "$main_src_dir"           \
+            "$board_dir/$fpga_board"  \
+            "$peripheral_dir"         \
+            "$lab_dir/common"
+        do
+            # TODO: Remove else after testing on Linux and Windows
+
+            if [[ "$OSTYPE" = "darwin"* ]]
+            then
+                $find_to_run  \
+                    "$(adj_path_for_gowin_win "$verilog_src_dir")"  \
+                    -type f \( -name '*.sv' -not -name tb.sv -o -name '*.v' \)  \
+                    | xargs -L 1 -I % echo "        <File path=\"%\" type=\"file.verilog\" enable=\"1\"/>"  \
+                    >> "$dir/fpga_project.gprj"
+            else
+                $find_to_run  \
+                    "$(adj_path_for_gowin_win "$verilog_src_dir")"  \
+                    -type f \( -name '*.sv' -not -name tb.sv -o -name '*.v' \)  \
+                    -printf "        <File path=\"%p\" type=\"file.verilog\" enable=\"1\"/>\n"  \
+                    >> "$dir/fpga_project.gprj"
+            fi
+        done
+
+        echo "        <File path=\"$(adj_path_for_gowin_win "$board_dir")/$fpga_board/board_specific.cst\" type=\"file.cst\" enable=\"1\"/>" >> "$dir/fpga_project.gprj"
+        echo "        <File path=\"$(adj_path_for_gowin_win "$board_dir")/$fpga_board/board_specific.sdc\" type=\"file.sdc\" enable=\"1\"/>" >> "$dir/fpga_project.gprj"
+
+        cat "$board_dir/$fpga_board/fpga_project_02.gprj" >> "$dir/fpga_project.gprj"
+    fi
+
+    if [ -e "$board_dir/$fpga_board/project_process_config_01.json" ] &&
+       [ -e "$board_dir/$fpga_board/project_process_config_02.json" ]
+    then
+        if ! [ -d $dir/impl ]
+        then
+            mkdir $dir/impl
+        fi
+
+        cat "$board_dir/$fpga_board/project_process_config_01.json" > "$dir/impl/project_process_config.json"
+
+        printf '   \"%s\",\n'  "$(adj_path_for_gowin_win "$main_src_dir")"          >> "$dir/impl/project_process_config.json"
+        printf '   \"%s\",\n' "$(adj_path_for_gowin_win "$board_dir")/$fpga_board" >> "$dir/impl/project_process_config.json"
+        printf '   \"%s\",\n' "$(adj_path_for_gowin_win "$peripheral_dir")"        >> "$dir/impl/project_process_config.json"
+        printf '   \"%s\"\n' "$(adj_path_for_gowin_win "$lab_dir")/common"        >> "$dir/impl/project_process_config.json"
+
+        cat "$board_dir/$fpga_board/project_process_config_02.json" >> "$dir/impl/project_process_config.json"
+    fi
+
+}
+
+#-----------------------------------------------------------------------------
+
+synthesize_for_fpga_gowin ()
+{
+    is_command_available_or_error "$gowin_sh_full_real_path" " from GoWin IDE package"
+    "$gowin_sh_full_real_path" fpga_project.tcl
+}
+
+#-----------------------------------------------------------------------------
+
+configure_fpga_gowin ()
+{
+    if [  "$OSTYPE" = "msys"     ] ||
+       [  "$OSTYPE" = "cygwin"   ] ||
+       [[ "$OSTYPE" = "darwin"* ]]
+    then
+        configure_fpga_gowin_proprietary
+    else
+        configure_fpga_gowin_openfpga
+    fi
+}
+
+#-----------------------------------------------------------------------------
+
+configure_fpga_gowin_proprietary ()
+{
+    is_command_available_or_error "$gowin_prog_full_real_path"  \
+        " tool programmer_cli ($gowin_prog_full_real_path) is not installed on system\n You can download and install Gowin EDA https://www.gowinsemi.com/en/support/home/"
+
+    # Run programmer_cli.exe -h to see the list of operations. As of September 2024:
+    # /c/Gowin/Gowin_V1.9.9.03_Education_x64/Programmer/bin/programmer_cli.exe -h
+    #   --operation_index <int>, --run <int>, -r <int>
+    #      0: Read Device Codes;
+    #      1: Reprogram;
+    #      2: SRAM Program;
+    #      3: SRAM Read;
+    #      4: SRAM Program and Verify;
+    # ->   5: embFlash Erase,Program;
+    #      6: embFlash Erase,Program,Verify;
+    #      7: embFlash Erase Only;
+    #      8: exFlash Erase,Program;
+    #      9: exFlash Erase,Program,Verify;
+    #      10: exFlash Bulk Erase;
+    #      11: exFlash Verify;
+    #      12: exFlash Erase,Program in bscan;
+    #      13: exFlash Erase,Program,Verify in bscan;
+    #      14: exFlash Bulk Erase in bscan;
+    #      15: exFlash Verify in bscan;
+    #      16: SRAM Program JTAG 1149;
+    #      17: SRAM Program,Verify JTAG 1149;
+    #      18: bsdl read;
+    #      19: embFlash 2nd Erase,Program;
+    #      20: embFlash 2nd Erase,Program,Verify;
+    #      21: embFlash 2nd Erase Only;
+    #      22: -R-;
+    #      23: Connect to JTAG of MCU;
+    #      24: SRAM Erase;
+    #      25: Authentication Code Erase,Program,Verify;
+    #      26: Authentication Code Read;
+    #      27: Firmware Erase,Program Securely;
+    #      28: Firmware Erase Only;
+    #      29: Firmware Erase,Program;
+    #      30: Firmware Erase,Program,Verify;
+    #      31: exFlash C Bin Erase,Program;
+    #      32: exFlash C Bin Erase,Program,Verify;
+    #      33: -R-;
+    #      34: MFG Write iRef;
+    #      35: CSR File Erase,Program,Verify;
+    # ->   36: exFlash Erase,Program thru GAO-Bridge;
+    #      37: exFlash Erase,Program,Verify thru GAO-Bridge;
+    #      38: exFlash C Bin Erase,Program thru GAO-Bridge;
+    #      39: exFlash C Bin Erase,Program,Verify thru GAO-Bridge;
+    #      40: DK-GoAI-GW1NSR4C_QN48 v1.1;
+    #      41: DK-GoAI-GW1NSR4C_QN48 v2.2;
+    #      42: DK-GoAI-GW2AR18_QN88P v1.1;
+    #      43: -R-;
+    #      44: sFlash Erase,Program;
+    #      45: sFlash Erase,Program,Verify;
+    #      46: sFlash Verify Only;
+    #      47: sFlash Bulk Erase;
+    #      48: sFlash Background Erase,Program;
+    #      49: sFlash Background Erase,Program,Verify;
+    #      50: sFlash Erase,Program,Verify thru GAO-Bridge;
+    #      51: exFlash Detect ID;
+    #      52: exFlash Bulk Erase 5AT;
+    #      53: exFlash Erase,Program 5AT;
+    #      54: exFlash Erase,Program,Verify 5AT;
+    #      55: exFlash C Bin Erase,Program 5AT;
+    #      56: exFlash C Bin Erase,Program,Verify 5AT;
+    #      57: I2C Program SRAM;
+    #      58: I2C Program Flash;
+    #      59: I2C Erase Flash Only;
+    #      60: I2C Erase Flash Only thru I2C-SPI;
+    #      61: I2C Erase,Program Flash thru I2C-SPI;
+    #      62: EBR Read;
+    #      63: sFlash Background Erase,Program,Verify thru GAO-Bridge;
+    #      64: sFlash Bulk Erase in bscan;
+    #      65: sFlash Erase,Program in bscan;
+    #      66: exFlash Verify 5AT;
+    #      67: exFlash Verify thru GAO-Bridge 5AT;
+    #      68: exFlash Erase,Program thru GAO-Bridge 5AT;
+    #      69: exFlash Erase,Program,Verify thru GAO-Bridge 5AT;
+    #      70: -R-;
+    #      71: -R-;
+
+    case $fpga_board in
+
+        runber        | \
+        tang_nano_1k* )
+
+            fpga_board_for_programmer="GW1NZ-1"
+            flash_method="-r 5"                     ;;
+
+        tang_nano_4k* )
+
+            fpga_board_for_programmer="GW1NSR-4C"
+            flash_method="-r 5"                     ;;
+
+        tang_nano_9k* )
+
+            fpga_board_for_programmer="GW1NR-9C"
+            flash_method="-r 5"                     ;;
+
+        tang_nano_20k*   | \
+        tang_primer_20k* )
+
+            fpga_board_for_programmer="GW2A-18C"
+            flash_method="-r 36"                    ;;
+
+        tang_primer_25k* )
+
+            fpga_board_for_programmer="GW5A-25A"
+            flash_method="-r 36"                    ;;
+
+        tang_mega_138k* )
+
+            fpga_board_for_programmer="GW5AST-138B"
+            flash_method="-r 36"                    ;;
+
+        *)
+            error "FPGA board $fpga_board is not supported by the script running openFPGALoader"
+            ;;
+    esac
+
+    #-------------------------------------------------------------------------
+
+    read -n 1 -r -p "Would you like to choose a flash method ? Try SRAM if flush does not work. S-SRAM E-Embedded Flash [s/E] "
+    printf "\n"
+
+    if [[ "$REPLY" =~ ^[Ss]$ ]] ; then
+        flash_method="-r 2"
+    fi
+
+    "$gowin_prog_full_real_path"      \
+        -d $fpga_board_for_programmer \
+        $flash_method                 \
+        --fsFile $(adj_path_for_gowin_win "$PWD")/impl/pnr/fpga_project.fs
+}
+
+#-----------------------------------------------------------------------------
+
+configure_fpga_gowin_openfpga ()
+{
+    is_command_available_or_error openFPGALoader \
+        " tool openFPGALoader is not installed on system\n You can download openFPGALoader here: https://trabucayre.github.io/openFPGALoader/guide/install.html"
+
+    #-------------------------------------------------------------------------
+
+    if [ "$OSTYPE" = "linux-gnu" ]
+    then
+        rules_dir=/etc/udev/rules.d
+        rules_file="$script_dir/fpga/91-sipeed.rules"
+
+        if ! grep -q 'ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010"' $rules_dir/*
+        then
+            error "No rules for Sipeed FPGA loader detected in $rules_dir."  \
+                  "Please put it there and reboot: sudo cp $rules_file $rules_dir"
+        fi
+
+        killall jtagd 2>/dev/null || true
+    fi
+
+    #-------------------------------------------------------------------------
+
+    case $fpga_board in
+
+        runber           ) fpga_board_for_openFPGALoader=runber        ;;
+        tang_nano_1k*    ) fpga_board_for_openFPGALoader=tangnano1k    ;;
+        tang_nano_4k*    ) fpga_board_for_openFPGALoader=tangnano4k    ;;
+        tang_nano_9k*    ) fpga_board_for_openFPGALoader=tangnano9k    ;;
+        tang_nano_20k*   ) fpga_board_for_openFPGALoader=tangnano20k   ;;
+        tang_primer_20k* ) fpga_board_for_openFPGALoader=tangprimer20k ;;
+        tang_primer_25k* ) fpga_board_for_openFPGALoader=tangprimer25k ;;
+        tang_mega_138k*  ) fpga_board_for_openFPGALoader=tangmega138k  ;;
+
+        *)
+            error "FPGA board $fpga_board is not supported by the script running openFPGALoader"
+            ;;
+    esac
+
+    #-------------------------------------------------------------------------
+
+    openFPGALoader -b $fpga_board_for_openFPGALoader impl/pnr/fpga_project.fs
+}
+
+#-----------------------------------------------------------------------------
+
+run_fpga_synthesis_gui_gowin ()
+{
+    is_command_available_or_error "$gowin_ide_full_real_path" " from GoWin IDE package"
+
+    # TODO: Is it possible to load the project after a preceding synthesis run?
+
+    "$gowin_ide_full_real_path" -prj fpga_project.gprj
+}

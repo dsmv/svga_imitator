@@ -1,0 +1,255 @@
+expected_source_script=00_setup.source_bash
+
+if [ -z "$BASH_SOURCE" ]
+then
+    printf "script \"%s\" should be sourced from \"%s\"\n"  \
+        "$0" "$expected_source_script" 1>&2
+
+    exit 1
+fi
+
+this_script=$(basename "${BASH_SOURCE[0]}")
+source_script=$(basename "${BASH_SOURCE[1]}")
+
+if [ -z "$source_script" ]
+then
+    printf "script \"%s\" should be sourced from  \"%s\"\n"  \
+        "$this_script" "$expected_source_script" 1>&2
+
+    return 1
+fi
+
+if [ "$source_script" != $expected_source_script ]
+then
+    printf "script \"%s\" should be sourced from  \"%s\", not \"%s\"\n"  \
+        "$this_script" "$expected_source_script" "$source_script" 1>&2
+
+    exit 1
+fi
+
+#-----------------------------------------------------------------------------
+
+xilinx_setup_vivado ()
+{
+       [ "$OSTYPE" = "linux-gnu" ]  \
+    || [ "$OSTYPE" = "cygwin"    ]  \
+    || [ "$OSTYPE" = "msys"      ]  \
+    || return
+
+    #-------------------------------------------------------------------------
+
+    vivado_install_dir=Xilinx/Vivado
+
+    if [ -n "${XILINX_VIVADO-}" ]
+    then
+       if [ -d "$XILINX_VIVADO/bin" ]
+       then
+           export PATH="${PATH:+$PATH:}$XILINX_VIVADO/bin"
+           return
+       fi
+
+       warning "XILINX_VIVADO variable is set to '$XILINX_VIVADO',"  \
+               "but there is no directory '$XILINX_VIVADO/bin'."     \
+               "Trying to find Vivado directory elsewhere."          \
+               "You can also use XILINX_HOME variable to specify"    \
+               "a parent directory for '$vivado_install_dir'."
+    fi
+
+    #-------------------------------------------------------------------------
+
+    if is_command_available vivado ; then
+        return  # Already set up
+    fi
+
+    #-------------------------------------------------------------------------
+
+    msg_for_XILINX_VIVADO="You can also use XILINX_VIVADO variable"
+    msg_for_XILINX_VIVADO+=" to specify a directory"
+    msg_for_XILINX_VIVADO+=" for a specific version of Vivado, such as"
+    msg_for_XILINX_VIVADO+=" XILINX_VIVADO=/tools/Xilinx/Vivado/2023.1."
+
+    if [ -n "${XILINX_HOME-}" ]
+    then
+        if [ -d "$XILINX_HOME/$vivado_install_dir" ]
+        then
+            vivado_install_parent_dir="$XILINX_HOME"
+        else
+            warning "XILINX_HOME variable is set to '$XILINX_HOME',"   \
+                    "but there is no directory"                        \
+                    "'$XILINX_HOME/$vivado_install_dir'."              \
+                    "Trying to find Xilinx home directory elsewhere."  \
+                    "$msg_for_XILINX_VIVADO"
+       fi
+    fi
+
+    #-------------------------------------------------------------------------
+
+    if [ "$OSTYPE" = "linux-gnu" ]
+    then
+        if [ -z "${vivado_install_parent_dir-}" ]
+        then
+            vivado_install_parent_dir="$HOME"
+        fi
+
+        if ! [ -d "$vivado_install_parent_dir/$vivado_install_dir" ]
+        then
+            vivado_install_parent_dir_first="$vivado_install_parent_dir"
+            vivado_install_parent_dir=/opt
+        fi
+
+        if ! [ -d "$vivado_install_parent_dir/$vivado_install_dir" ]
+        then
+            vivado_install_parent_dir_second="$vivado_install_parent_dir"
+            vivado_install_parent_dir=/tools
+        fi
+
+    elif  [ "$OSTYPE" = "cygwin"    ]  \
+       || [ "$OSTYPE" = "msys"      ]
+    then
+        if [ -z "${vivado_install_parent_dir-}" ]
+        then
+            vivado_install_parent_dir=/c
+        fi
+
+        if ! [ -d "$vivado_install_parent_dir/$vivado_install_dir" ]
+        then
+            vivado_install_parent_dir_first="$vivado_install_parent_dir"
+            vivado_install_parent_dir=/d
+        fi
+
+        if ! [ -d "$vivado_install_parent_dir/$vivado_install_dir" ]
+        then
+            vivado_install_parent_dir_second="$vivado_install_parent_dir"
+            vivado_install_parent_dir=/e
+        fi
+    else
+        error "this script does not support your OS / platform '$OSTYPE'"
+    fi
+
+    #-------------------------------------------------------------------------
+
+    if ! [ -d "$vivado_install_parent_dir/$vivado_install_dir" ]
+    then
+        extra_msg="'$vivado_install_dir'"
+        extra_msg+=" location (parent directory) can be set"
+        extra_msg+=" by the environment variable XILINX_HOME."
+        extra_msg+=" $msg_for_XILINX_VIVADO"
+
+        if [ -z "${vivado_install_parent_dir_first-}" ]
+        then
+            error "expected to find '$vivado_install_dir' directory"  \
+                  "under '$vivado_install_parent_dir'."               \
+                  "$extra_msg"
+
+        elif [ -z "${vivado_install_parent_dir_second-}" ]
+        then
+            error "expected to find '$vivado_install_dir' directory"  \
+                  "under either '$vivado_install_parent_dir_first'"   \
+                  "or '$vivado_install_parent_dir'."                  \
+                  "$extra_msg"
+        else
+            error "expected to find '$vivado_install_dir' directory"  \
+                  "under either '$vivado_install_parent_dir_first'"   \
+                  "or '$vivado_install_parent_dir_second'"            \
+                  "or '$vivado_install_parent_dir'."                  \
+                  "$extra_msg"
+        fi
+    fi
+
+    #-------------------------------------------------------------------------
+
+    find_dir="$vivado_install_parent_dir/$vivado_install_dir"
+    find_opt="-mindepth 1 -maxdepth 1 -type d -print"
+
+    latest_version_dir=$($find_to_run "$find_dir" $find_opt | sort | tail -1)
+
+    if [ -z "$latest_version_dir" ]
+    then
+        error "cannot find any version of Intel FPGA installed in "  \
+              "'$vivado_install_parent_dir/$vivado_install_dir'"
+    fi
+
+    #-------------------------------------------------------------------------
+
+    export XILINX_VIVADO="$latest_version_dir"
+    export PATH="${PATH:+$PATH:}$XILINX_VIVADO/bin"
+
+    #-------------------------------------------------------------------------
+
+    all_version_dirs=$($find_to_run "$find_dir" $find_opt | xargs echo)
+
+    if [ "$latest_version_dir" != "$all_version_dirs" ]
+    then
+        warning "multiple Intel FPGA versions installed in"  \
+                "'$vivado_install_parent_dir/$vivado_install_dir':"  \
+                "'$all_version_dirs'"
+
+        info "XILINX_VIVADO=$XILINX_VIVADO"
+        info "PATH=$PATH"
+    fi
+}
+
+#-----------------------------------------------------------------------------
+
+setup_run_directory_for_fpga_synthesis_xilinx ()
+{
+    dir="$1"
+    main_src_dir="$2"
+
+    cat "$board_dir/$fpga_board/board_specific.tcl"      \
+        "$script_dir/fpga/xilinx_vivado_synthesize.tcl"  \
+        > "$dir/fpga_project_synthesize.tcl"
+
+    cat "$board_dir/$fpga_board/board_specific.tcl"      \
+        "$script_dir/fpga/xilinx_vivado_configure.tcl"  \
+        > "$dir/fpga_project_configure.tcl"
+}
+
+#-----------------------------------------------------------------------------
+
+synthesize_for_fpga_xilinx ()
+{
+    is_command_available_or_error vivado " from Xilinx package"
+
+    if ! vivado -mode batch -source fpga_project_synthesize.tcl 2>&1 | tee -a "$log"
+    then
+        grep -i -A 5 error "$log" 2>&1
+        error "synthesis failed"
+    fi
+}
+
+#-----------------------------------------------------------------------------
+
+configure_fpga_xilinx ()
+{
+    is_command_available_or_error vivado " from Xilinx package"
+
+    [ -f fpga_project_configure.tcl ] \
+        || error "cannot find a configuration script, most likely synthesis step was not run"
+
+    if ! vivado -mode batch -source fpga_project_configure.tcl 2>&1 | tee -a "$log"
+    then
+        grep -i -A 5 error "$log" 2>&1
+        error "configuration failed"
+    fi
+}
+
+#-----------------------------------------------------------------------------
+
+run_fpga_synthesis_gui_xilinx ()
+{
+    is_command_available_or_error vivado " from Xilinx package"
+
+    if   [    -f ./gui_prj/board_specific_top.xpr ] ; then
+          vivado ./gui_prj/board_specific_top.xpr &
+    elif [    -f post_route.dcp ] ; then
+          vivado post_route.dcp &
+    elif [    -f post_place.dcp ] ; then
+          vivado post_place.dcp &
+    elif [    -f post_synth.dcp ] ; then
+          vivado post_synth.dcp &
+    else
+          setup_run_directory_for_fpga_synthesis
+          vivado &
+    fi
+}

@@ -23,6 +23,8 @@ class tc_svga : public QWidget
         explicit tc_svga( uint id, tf_global_data  *p_global_data, QWidget *parent = nullptr);
         ~tc_svga();
 
+        void updateSvgaScreen();
+        
     private:
 
         uint _id;

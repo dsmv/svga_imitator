@@ -85,3 +85,7 @@ tc_svga::~tc_svga()
     _p_instance = NULL;
 }
 
+void tc_svga::updateSvgaScreen()
+{
+    _p_svga_wg->update();
+}
