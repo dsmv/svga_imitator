@@ -165,8 +165,12 @@ void  tf_global_data::log_step()
                         curr_y++;
                         if( curr_y==_svga.v_size )
                         {
+                            QImage image;
+                            image = _p_svga_image->copy( 0, 0, _svga.h_size, _svga.v_size );
+
                             QString fname = QString( "svga_%1.png").formatArg(_svga.cadr);
-                            _p_svga_image->save( fname );
+                            //_p_svga_image->save( fname );
+                            image.save(fname);
                             curr_y=0;
                             _svga.cadr++;
                             QString str = QString( "Write file %1").formatArg( fname );

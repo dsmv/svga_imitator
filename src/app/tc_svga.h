@@ -25,6 +25,8 @@ class tc_svga : public QWidget
 
         void updateSvgaScreen();
         
+        void updateScreenSize( uint h_size, uint v_size );
+        
     private:
 
         uint _id;

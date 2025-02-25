@@ -23,14 +23,15 @@ class tc_svga_wg : public QWidget
 
         void paintEvent(QPaintEvent *event);
 
-
+        void updateScreenSize( uint h_size, uint v_size );
+        
     private:
+        
+        uint _v_size;
+        uint _h_size;
 
         uint _id;
         tf_global_data  *_p_global_data;
-
-        QImage      *_p_image;
-
 
 
 };

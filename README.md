@@ -14,16 +14,16 @@ Simulate output to SVGA from RTL simulator
 
 ### example svga_osc - Window (cadr 2)
 
-![](./doc/example_ocs_window.png)
+![](./doc/svga_osc/example_ocs_window.png)
 
-### example svga_osc - cadr 0
 
-![](./doc/example_osc_svga_0.png)
+### example 2_1_rectangle_ellipse_parabola - Window 
 
-### example svga_osc - cadr 1
+![](./doc/2_1_rectangle_ellipse_parabola/window.png)
 
-![](./doc/example_osc_svga_1.png)
 
-### example svga_osc - cadr 2
+### Others screenshots
 
-![](./doc/example_osc_svga_2.png)
+* 2_1_rectangle_ellipse_parabola [2_1_rectangle_ellipse_parabola.md](./doc/2_1_rectangle_ellipse_parabola.md)
+* svga_osc [svga_osc.md](./doc/svga_osc.md)
+

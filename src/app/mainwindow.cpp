@@ -76,8 +76,8 @@ MainWindow::MainWindow()
 #endif
 
 
-    this->setMinimumHeight( 900 );
-    this->setMinimumWidth( 1044 );
+    this->setMinimumHeight( 500 );
+    this->setMinimumWidth(  650 );
 
     actionSvga();
     //actionLog();
@@ -175,6 +175,7 @@ void MainWindow::actionSvga()
     addMdiChild(oDw);
 
     connect( this, &MainWindow::updateSvgaScreen, oDw, &tc_svga::updateSvgaScreen );
+    connect( _p_global_data, &tf_global_data::updateScreenSize, oDw, &tc_svga::updateScreenSize );
 
    }
 }

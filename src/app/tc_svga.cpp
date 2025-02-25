@@ -75,7 +75,7 @@ tc_svga::tc_svga( uint id, tf_global_data  *p_global_data, QWidget *parent )
 
     _p_instance=this;
 
-    this->setMinimumHeight( 800 );
+    this->setMinimumHeight( 788 );
     this->setMinimumWidth( 1044 );
 
 }
@@ -88,4 +88,12 @@ tc_svga::~tc_svga()
 void tc_svga::updateSvgaScreen()
 {
     _p_svga_wg->update();
+}
+
+void tc_svga::updateScreenSize( uint h_size, uint v_size )
+{
+    this->setMinimumHeight( v_size+20 );
+    this->setMinimumWidth(  h_size+20 );
+
+    _p_svga_wg->updateScreenSize( h_size, v_size );
 }

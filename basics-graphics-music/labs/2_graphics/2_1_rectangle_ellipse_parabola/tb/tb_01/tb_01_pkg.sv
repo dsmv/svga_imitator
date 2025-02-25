@@ -29,13 +29,17 @@ package tb_01_pkg;
     task tb_01_seq_key;
 
         $display( "tb_01_seq_key() - start" );
-        for( int ii=0; ii<16; ii++ ) begin
+        for( int ii=0; ii<8; ii++ ) begin
+
+            $display( "tb_01_seq_key() - cadr: %d", ii );
             
+            @(posedge _s.clk iff _s.vsync );
+
             @(posedge _s.clk iff ~_s.vsync );
 
             _s.key <= _s.key + 1;
 
-            @(posedge _s.clk iff _s.vsync );
+            
 
         end
         $display( "tb_01_seq_key() - complete" );
