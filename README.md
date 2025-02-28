@@ -14,7 +14,7 @@ Results:
 
 To simulate the display of an image on the monitor screen, the technology of connecting an external DLL to the RTL simulator via the DPI interface is used. Then the DLL uses shared memory to form a video buffer. The simulator program receives data from the shared memory and forms an image.
 
-__General structure of the system___
+__General structure of the system__
 
 ![](./doc/svga_imitator_top.png)
 
@@ -96,7 +96,7 @@ Cooperspcie framework needs to be installed. Build is done using cmake.
 
 Simulation is performed in the Vivado system. The test example is developed based on the vivado_simulation_example project.
 
-It is necessary to prepare Vivado as specified in the document: https://github.com/dsmv/vivado_simulation_example/blob/main/README_rus.md
+It is necessary to prepare Vivado as specified in the document: https://github.com/dsmv/vivado_simulation_example/blob/main/README.md
 
 Simulation is performed in the run_sim_vivado/sim_xx directory of the selected project. For the svga_osc example and the tb_01 test, the working directory will be: labs/99_svga/svga_osc/run_sim_vivado/sim_01
 
