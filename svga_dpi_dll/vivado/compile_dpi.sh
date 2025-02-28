@@ -1,1 +1,1 @@
-xsc svga_dpi.cpp shm_buffer.cpp -o svga_dpiu.so
+xsc svga_dpi.cpp shm_buffer.cpp -o svga_dpi.so

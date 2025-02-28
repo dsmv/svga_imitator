@@ -14,5 +14,6 @@ xsim_coverage_report
 *.wdb
 *.vcd
 global.txt
+env_user.sh
 
 
