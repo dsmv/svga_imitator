@@ -47,6 +47,8 @@ The simulator program also generates image files for each received frame. File n
 
 ## Projects
 
+The following projects are used:
+
 * https://github.com/yuri-panchul/basics-graphics-music
 * https://github.com/dsmv/2023-lalambda-fpga-labs
 * https://github.com/dsmv/vivado_simulation_example
