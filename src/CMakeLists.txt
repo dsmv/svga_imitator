@@ -74,7 +74,7 @@ list(APPEND svga_imitator_SOURCES
    ${CMAKE_CURRENT_SOURCE_DIR}/../forms/mainwindow.ui
 
 
-   qrc_svga_imitator.cpp
+  # qrc_svga_imitator.cpp
 )
 
 # include(audio/audio.cmake)

@@ -23,7 +23,7 @@ The program detects the fact of starting or restarting the RTL simulator and adj
 
 The simulator program is based on Cooperspice:  https://www.copperspice.com/
 
-The Vivado simulator is used for modeling. It is possible to use other simulators, but for them you need to compile other shared libraries.
+The Vivado simulator is used for simulation. Other simulators can be used, but they will require compiling other shared libraries.
 
 The simulator program also generates image files for each received frame. File names: svga_nn.png, where nn is the frame number
 
