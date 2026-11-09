@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb" />
+            <top_module name="tb_01_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="476.000000001 ms"></ZoomEndTime>
+      <Cursor1Time time="79.258696000 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="258"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="132" />
+   <wave_markers>
+      <marker label="" time="45855795000" />
+      <marker label="" time="45835318000" />
+   </wave_markers>
+   <wvobject type="logic" fp_name="/tb/lab_top/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/slow_clk">
+      <obj_property name="ElementShortName">slow_clk</obj_property>
+      <obj_property name="ObjectShortName">slow_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/key">
+      <obj_property name="ElementShortName">key[3:0]</obj_property>
+      <obj_property name="ObjectShortName">key[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/sw">
+      <obj_property name="ElementShortName">sw[7:0]</obj_property>
+      <obj_property name="ObjectShortName">sw[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/led">
+      <obj_property name="ElementShortName">led[7:0]</obj_property>
+      <obj_property name="ObjectShortName">led[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/abcdefgh">
+      <obj_property name="ElementShortName">abcdefgh[7:0]</obj_property>
+      <obj_property name="ObjectShortName">abcdefgh[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/digit">
+      <obj_property name="ElementShortName">digit[7:0]</obj_property>
+      <obj_property name="ObjectShortName">digit[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/x">
+      <obj_property name="ElementShortName">x[9:0]</obj_property>
+      <obj_property name="ObjectShortName">x[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/y">
+      <obj_property name="ElementShortName">y[9:0]</obj_property>
+      <obj_property name="ObjectShortName">y[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/red">
+      <obj_property name="ElementShortName">red[3:0]</obj_property>
+      <obj_property name="ObjectShortName">red[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/green">
+      <obj_property name="ElementShortName">green[3:0]</obj_property>
+      <obj_property name="ObjectShortName">green[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/blue">
+      <obj_property name="ElementShortName">blue[3:0]</obj_property>
+      <obj_property name="ObjectShortName">blue[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/mic">
+      <obj_property name="ElementShortName">mic[23:0]</obj_property>
+      <obj_property name="ObjectShortName">mic[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/sound">
+      <obj_property name="ElementShortName">sound[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sound[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/mic_we">
+      <obj_property name="ElementShortName">mic_we</obj_property>
+      <obj_property name="ObjectShortName">mic_we</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/uart_rx">
+      <obj_property name="ElementShortName">uart_rx</obj_property>
+      <obj_property name="ObjectShortName">uart_rx</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/uart_tx">
+      <obj_property name="ElementShortName">uart_tx</obj_property>
+      <obj_property name="ObjectShortName">uart_tx</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/gpio">
+      <obj_property name="ElementShortName">gpio[99:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio[99:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/color">
+      <obj_property name="ElementShortName">color[11:0]</obj_property>
+      <obj_property name="ObjectShortName">color[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/color_q">
+      <obj_property name="ElementShortName">color_q[11:0]</obj_property>
+      <obj_property name="ObjectShortName">color_q[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/pixel_x">
+      <obj_property name="ElementShortName">pixel_x[9:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_x[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/pixel_y">
+      <obj_property name="ElementShortName">pixel_y[9:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_y[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/pixel_x_q">
+      <obj_property name="ElementShortName">pixel_x_q[9:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_x_q[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/pixel_x_q2">
+      <obj_property name="ElementShortName">pixel_x_q2[9:0]</obj_property>
+      <obj_property name="ObjectShortName">pixel_x_q2[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_vga_r">
+      <obj_property name="ElementShortName">osc_vga_r[3:0]</obj_property>
+      <obj_property name="ObjectShortName">osc_vga_r[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_vga_g">
+      <obj_property name="ElementShortName">osc_vga_g[3:0]</obj_property>
+      <obj_property name="ObjectShortName">osc_vga_g[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_vga_b">
+      <obj_property name="ElementShortName">osc_vga_b[3:0]</obj_property>
+      <obj_property name="ObjectShortName">osc_vga_b[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_state">
+      <obj_property name="ElementShortName">osc_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">osc_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/note_vga_r">
+      <obj_property name="ElementShortName">note_vga_r[3:0]</obj_property>
+      <obj_property name="ObjectShortName">note_vga_r[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/note_vga_g">
+      <obj_property name="ElementShortName">note_vga_g[3:0]</obj_property>
+      <obj_property name="ObjectShortName">note_vga_g[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/note_vga_b">
+      <obj_property name="ElementShortName">note_vga_b[3:0]</obj_property>
+      <obj_property name="ObjectShortName">note_vga_b[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/rstp">
+      <obj_property name="ElementShortName">rstp</obj_property>
+      <obj_property name="ObjectShortName">rstp</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/vsync">
+      <obj_property name="ElementShortName">vsync</obj_property>
+      <obj_property name="ObjectShortName">vsync</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/mic16">
+      <obj_property name="ElementShortName">mic16[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mic16[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/prev_value">
+      <obj_property name="ElementShortName">prev_value[15:0]</obj_property>
+      <obj_property name="ObjectShortName">prev_value[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/counter">
+      <obj_property name="ElementShortName">counter[19:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/distance">
+      <obj_property name="ElementShortName">distance[19:0]</obj_property>
+      <obj_property name="ObjectShortName">distance[19:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d0_stp">
+      <obj_property name="ElementShortName">d0_stp[2:0]</obj_property>
+      <obj_property name="ObjectShortName">d0_stp[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d0_cnt_high">
+      <obj_property name="ElementShortName">d0_cnt_high[4:0]</obj_property>
+      <obj_property name="ObjectShortName">d0_cnt_high[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d0_cnt_low">
+      <obj_property name="ElementShortName">d0_cnt_low[4:0]</obj_property>
+      <obj_property name="ObjectShortName">d0_cnt_low[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d0_counter">
+      <obj_property name="ElementShortName">d0_counter[15:0]</obj_property>
+      <obj_property name="ObjectShortName">d0_counter[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d0_distanse">
+      <obj_property name="ElementShortName">d0_distanse[15:0]</obj_property>
+      <obj_property name="ObjectShortName">d0_distanse[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d0_distance_step">
+      <obj_property name="ElementShortName">d0_distance_step</obj_property>
+      <obj_property name="ObjectShortName">d0_distance_step</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d0_stp">
+      <obj_property name="ElementShortName">n_d0_stp[2:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d0_stp[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d0_cnt_high">
+      <obj_property name="ElementShortName">n_d0_cnt_high[4:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d0_cnt_high[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d0_cnt_low">
+      <obj_property name="ElementShortName">n_d0_cnt_low[4:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d0_cnt_low[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d0_counter">
+      <obj_property name="ElementShortName">n_d0_counter[15:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d0_counter[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d0_distance_step">
+      <obj_property name="ElementShortName">n_d0_distance_step</obj_property>
+      <obj_property name="ObjectShortName">n_d0_distance_step</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d1_stp">
+      <obj_property name="ElementShortName">d1_stp[3:0]</obj_property>
+      <obj_property name="ObjectShortName">d1_stp[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d1_temp_counter">
+      <obj_property name="ElementShortName">d1_temp_counter[9:0]</obj_property>
+      <obj_property name="ObjectShortName">d1_temp_counter[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d1_8_step">
+      <obj_property name="ElementShortName">d1_8_step</obj_property>
+      <obj_property name="ObjectShortName">d1_8_step</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d1_4_step">
+      <obj_property name="ElementShortName">d1_4_step</obj_property>
+      <obj_property name="ObjectShortName">d1_4_step</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d1_2_step">
+      <obj_property name="ElementShortName">d1_2_step</obj_property>
+      <obj_property name="ObjectShortName">d1_2_step</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d1_1_step">
+      <obj_property name="ElementShortName">d1_1_step</obj_property>
+      <obj_property name="ObjectShortName">d1_1_step</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d1_8_flag">
+      <obj_property name="ElementShortName">d1_8_flag</obj_property>
+      <obj_property name="ObjectShortName">d1_8_flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d1_4_flag">
+      <obj_property name="ElementShortName">d1_4_flag</obj_property>
+      <obj_property name="ObjectShortName">d1_4_flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d1_2_flag">
+      <obj_property name="ElementShortName">d1_2_flag</obj_property>
+      <obj_property name="ObjectShortName">d1_2_flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d1_1_flag">
+      <obj_property name="ElementShortName">d1_1_flag</obj_property>
+      <obj_property name="ObjectShortName">d1_1_flag</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d1_stp">
+      <obj_property name="ElementShortName">n_d1_stp[3:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d1_stp[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d1_temp_counter">
+      <obj_property name="ElementShortName">n_d1_temp_counter[9:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d1_temp_counter[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d1_16_step">
+      <obj_property name="ElementShortName">n_d1_16_step</obj_property>
+      <obj_property name="ObjectShortName">n_d1_16_step</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d1_8_step">
+      <obj_property name="ElementShortName">n_d1_8_step</obj_property>
+      <obj_property name="ObjectShortName">n_d1_8_step</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d1_4_step">
+      <obj_property name="ElementShortName">n_d1_4_step</obj_property>
+      <obj_property name="ObjectShortName">n_d1_4_step</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d1_2_step">
+      <obj_property name="ElementShortName">n_d1_2_step</obj_property>
+      <obj_property name="ObjectShortName">n_d1_2_step</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d1_1_step">
+      <obj_property name="ElementShortName">n_d1_1_step</obj_property>
+      <obj_property name="ObjectShortName">n_d1_1_step</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d1_8_flag">
+      <obj_property name="ElementShortName">n_d1_8_flag</obj_property>
+      <obj_property name="ObjectShortName">n_d1_8_flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d1_4_flag">
+      <obj_property name="ElementShortName">n_d1_4_flag</obj_property>
+      <obj_property name="ObjectShortName">n_d1_4_flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d1_2_flag">
+      <obj_property name="ElementShortName">n_d1_2_flag</obj_property>
+      <obj_property name="ObjectShortName">n_d1_2_flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d1_1_flag">
+      <obj_property name="ElementShortName">n_d1_1_flag</obj_property>
+      <obj_property name="ObjectShortName">n_d1_1_flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d1_rstp">
+      <obj_property name="ElementShortName">d1_rstp</obj_property>
+      <obj_property name="ObjectShortName">d1_rstp</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/mem_distance_low">
+      <obj_property name="ElementShortName">mem_distance_low[0:63][9:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_distance_low[0:63][9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/mem_distance_high">
+      <obj_property name="ElementShortName">mem_distance_high[0:63][9:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_distance_high[0:63][9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d2_distance_collection">
+      <obj_property name="ElementShortName">d2_distance_collection[0:63][15:0]</obj_property>
+      <obj_property name="ObjectShortName">d2_distance_collection[0:63][15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d2_mic_we_z0">
+      <obj_property name="ElementShortName">d2_mic_we_z0</obj_property>
+      <obj_property name="ObjectShortName">d2_mic_we_z0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d2_mic_we_z1">
+      <obj_property name="ElementShortName">d2_mic_we_z1</obj_property>
+      <obj_property name="ObjectShortName">d2_mic_we_z1</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d2_stp">
+      <obj_property name="ElementShortName">d2_stp[3:0]</obj_property>
+      <obj_property name="ObjectShortName">d2_stp[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d1_16_step">
+      <obj_property name="ElementShortName">d1_16_step</obj_property>
+      <obj_property name="ObjectShortName">d1_16_step</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d2_recognize_result">
+      <obj_property name="ElementShortName">d2_recognize_result[5:0]</obj_property>
+      <obj_property name="ObjectShortName">d2_recognize_result[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d2_recognize_result_step">
+      <obj_property name="ElementShortName">d2_recognize_result_step</obj_property>
+      <obj_property name="ObjectShortName">d2_recognize_result_step</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d2_fix_16_step">
+      <obj_property name="ElementShortName">d2_fix_16_step</obj_property>
+      <obj_property name="ObjectShortName">d2_fix_16_step</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d2_no_distance_cnt">
+      <obj_property name="ElementShortName">d2_no_distance_cnt[15:0]</obj_property>
+      <obj_property name="ObjectShortName">d2_no_distance_cnt[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d2_max_index">
+      <obj_property name="ElementShortName">d2_max_index[5:0]</obj_property>
+      <obj_property name="ObjectShortName">d2_max_index[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d2_max_value">
+      <obj_property name="ElementShortName">d2_max_value[15:0]</obj_property>
+      <obj_property name="ObjectShortName">d2_max_value[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d2_stp">
+      <obj_property name="ElementShortName">n_d2_stp[3:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d2_stp[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d2_index">
+      <obj_property name="ElementShortName">n_d2_index[5:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d2_index[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d2_recognize_result">
+      <obj_property name="ElementShortName">n_d2_recognize_result[5:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d2_recognize_result[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d2_recognize_result_step">
+      <obj_property name="ElementShortName">n_d2_recognize_result_step</obj_property>
+      <obj_property name="ObjectShortName">n_d2_recognize_result_step</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d2_fix_16_step">
+      <obj_property name="ElementShortName">n_d2_fix_16_step</obj_property>
+      <obj_property name="ObjectShortName">n_d2_fix_16_step</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d2_no_distance_cnt">
+      <obj_property name="ElementShortName">n_d2_no_distance_cnt[15:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d2_no_distance_cnt[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d2_distance_value">
+      <obj_property name="ElementShortName">n_d2_distance_value[15:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d2_distance_value[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d2_distance_we">
+      <obj_property name="ElementShortName">n_d2_distance_we</obj_property>
+      <obj_property name="ObjectShortName">n_d2_distance_we</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/d2_index">
+      <obj_property name="ElementShortName">d2_index[5:0]</obj_property>
+      <obj_property name="ObjectShortName">d2_index[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/n_d2_no_distance_flag">
+      <obj_property name="ElementShortName">n_d2_no_distance_flag</obj_property>
+      <obj_property name="ObjectShortName">n_d2_no_distance_flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/d2_no_distance_flag">
+      <obj_property name="ElementShortName">d2_no_distance_flag</obj_property>
+      <obj_property name="ObjectShortName">d2_no_distance_flag</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d0_distanse">
+      <obj_property name="ElementShortName">n_d0_distanse[15:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d0_distanse[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_low_distanse">
+      <obj_property name="ElementShortName">n_low_distanse[15:0]</obj_property>
+      <obj_property name="ObjectShortName">n_low_distanse[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_high_distanse">
+      <obj_property name="ElementShortName">n_high_distanse[15:0]</obj_property>
+      <obj_property name="ObjectShortName">n_high_distanse[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d2_max_index">
+      <obj_property name="ElementShortName">n_d2_max_index[5:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d2_max_index[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/n_d2_max_value">
+      <obj_property name="ElementShortName">n_d2_max_value[15:0]</obj_property>
+      <obj_property name="ObjectShortName">n_d2_max_value[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/clk_mhz">
+      <obj_property name="ElementShortName">clk_mhz[31:0]</obj_property>
+      <obj_property name="ObjectShortName">clk_mhz[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_key">
+      <obj_property name="ElementShortName">w_key[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_key[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_sw">
+      <obj_property name="ElementShortName">w_sw[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_sw[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_led">
+      <obj_property name="ElementShortName">w_led[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_led[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_digit">
+      <obj_property name="ElementShortName">w_digit[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_digit[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_gpio">
+      <obj_property name="ElementShortName">w_gpio[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_gpio[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/screen_width">
+      <obj_property name="ElementShortName">screen_width[31:0]</obj_property>
+      <obj_property name="ObjectShortName">screen_width[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/screen_height">
+      <obj_property name="ElementShortName">screen_height[31:0]</obj_property>
+      <obj_property name="ObjectShortName">screen_height[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_red">
+      <obj_property name="ElementShortName">w_red[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_red[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_green">
+      <obj_property name="ElementShortName">w_green[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_green[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_blue">
+      <obj_property name="ElementShortName">w_blue[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_blue[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_x">
+      <obj_property name="ElementShortName">w_x[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_x[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/w_y">
+      <obj_property name="ElementShortName">w_y[31:0]</obj_property>
+      <obj_property name="ObjectShortName">w_y[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/threshold">
+      <obj_property name="ElementShortName">threshold[15:0]</obj_property>
+      <obj_property name="ObjectShortName">threshold[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/threshold_low">
+      <obj_property name="ElementShortName">threshold_low[15:0]</obj_property>
+      <obj_property name="ObjectShortName">threshold_low[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/threshold_high">
+      <obj_property name="ElementShortName">threshold_high[15:0]</obj_property>
+      <obj_property name="ObjectShortName">threshold_high[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/mic_sample_rate">
+      <obj_property name="ElementShortName">mic_sample_rate[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mic_sample_rate[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/temp_period">
+      <obj_property name="ElementShortName">temp_period[31:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_period[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/temp_1_16_cnt">
+      <obj_property name="ElementShortName">temp_1_16_cnt[9:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_1_16_cnt[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/start_level">
+      <obj_property name="ElementShortName">start_level[15:0]</obj_property>
+      <obj_property name="ObjectShortName">start_level[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/freq_100_C">
+      <obj_property name="ElementShortName">freq_100_C[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq_100_C[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/freq_100_Cs">
+      <obj_property name="ElementShortName">freq_100_Cs[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq_100_Cs[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/freq_100_D">
+      <obj_property name="ElementShortName">freq_100_D[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq_100_D[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/freq_100_Ds">
+      <obj_property name="ElementShortName">freq_100_Ds[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq_100_Ds[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/freq_100_E">
+      <obj_property name="ElementShortName">freq_100_E[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq_100_E[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/freq_100_F">
+      <obj_property name="ElementShortName">freq_100_F[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq_100_F[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/freq_100_Fs">
+      <obj_property name="ElementShortName">freq_100_Fs[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq_100_Fs[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/freq_100_G">
+      <obj_property name="ElementShortName">freq_100_G[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq_100_G[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/freq_100_Gs">
+      <obj_property name="ElementShortName">freq_100_Gs[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq_100_Gs[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/freq_100_A">
+      <obj_property name="ElementShortName">freq_100_A[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq_100_A[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/freq_100_As">
+      <obj_property name="ElementShortName">freq_100_As[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq_100_As[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/freq_100_B">
+      <obj_property name="ElementShortName">freq_100_B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">freq_100_B[31:0]</obj_property>
+   </wvobject>
+</wave_config>

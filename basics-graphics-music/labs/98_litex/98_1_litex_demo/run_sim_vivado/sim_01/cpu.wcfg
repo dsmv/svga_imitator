@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb" />
+            <top_module name="tb_01_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0 ps"></ZoomStartTime>
+      <ZoomEndTime time="8 ps"></ZoomEndTime>
+      <Cursor1Time time="0 ps"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="254"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="269" />
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/resetn">
+      <obj_property name="ElementShortName">resetn</obj_property>
+      <obj_property name="ObjectShortName">resetn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/trap">
+      <obj_property name="ElementShortName">trap</obj_property>
+      <obj_property name="ObjectShortName">trap</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_valid">
+      <obj_property name="ElementShortName">mem_valid</obj_property>
+      <obj_property name="ObjectShortName">mem_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_instr">
+      <obj_property name="ElementShortName">mem_instr</obj_property>
+      <obj_property name="ObjectShortName">mem_instr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_ready">
+      <obj_property name="ElementShortName">mem_ready</obj_property>
+      <obj_property name="ObjectShortName">mem_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_addr">
+      <obj_property name="ElementShortName">mem_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_wdata">
+      <obj_property name="ElementShortName">mem_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_wstrb">
+      <obj_property name="ElementShortName">mem_wstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_wstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_rdata">
+      <obj_property name="ElementShortName">mem_rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_la_read">
+      <obj_property name="ElementShortName">mem_la_read</obj_property>
+      <obj_property name="ObjectShortName">mem_la_read</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_la_write">
+      <obj_property name="ElementShortName">mem_la_write</obj_property>
+      <obj_property name="ObjectShortName">mem_la_write</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_la_addr">
+      <obj_property name="ElementShortName">mem_la_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_la_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_la_wdata">
+      <obj_property name="ElementShortName">mem_la_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_la_wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_la_wstrb">
+      <obj_property name="ElementShortName">mem_la_wstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_la_wstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_valid">
+      <obj_property name="ElementShortName">pcpi_valid</obj_property>
+      <obj_property name="ObjectShortName">pcpi_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_insn">
+      <obj_property name="ElementShortName">pcpi_insn[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pcpi_insn[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_rs1">
+      <obj_property name="ElementShortName">pcpi_rs1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pcpi_rs1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_rs2">
+      <obj_property name="ElementShortName">pcpi_rs2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pcpi_rs2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_wr">
+      <obj_property name="ElementShortName">pcpi_wr</obj_property>
+      <obj_property name="ObjectShortName">pcpi_wr</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_rd">
+      <obj_property name="ElementShortName">pcpi_rd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pcpi_rd[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_wait">
+      <obj_property name="ElementShortName">pcpi_wait</obj_property>
+      <obj_property name="ObjectShortName">pcpi_wait</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_ready">
+      <obj_property name="ElementShortName">pcpi_ready</obj_property>
+      <obj_property name="ObjectShortName">pcpi_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/irq">
+      <obj_property name="ElementShortName">irq[31:0]</obj_property>
+      <obj_property name="ObjectShortName">irq[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/eoi">
+      <obj_property name="ElementShortName">eoi[31:0]</obj_property>
+      <obj_property name="ObjectShortName">eoi[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/trace_valid">
+      <obj_property name="ElementShortName">trace_valid</obj_property>
+      <obj_property name="ObjectShortName">trace_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/trace_data">
+      <obj_property name="ElementShortName">trace_data[35:0]</obj_property>
+      <obj_property name="ObjectShortName">trace_data[35:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/count_cycle">
+      <obj_property name="ElementShortName">count_cycle[63:0]</obj_property>
+      <obj_property name="ObjectShortName">count_cycle[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/count_instr">
+      <obj_property name="ElementShortName">count_instr[63:0]</obj_property>
+      <obj_property name="ObjectShortName">count_instr[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/reg_pc">
+      <obj_property name="ElementShortName">reg_pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_pc[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/reg_next_pc">
+      <obj_property name="ElementShortName">reg_next_pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_next_pc[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/reg_op1">
+      <obj_property name="ElementShortName">reg_op1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_op1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/reg_op2">
+      <obj_property name="ElementShortName">reg_op2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_op2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/reg_out">
+      <obj_property name="ElementShortName">reg_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/reg_sh">
+      <obj_property name="ElementShortName">reg_sh[4:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_sh[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/next_insn_opcode">
+      <obj_property name="ElementShortName">next_insn_opcode[31:0]</obj_property>
+      <obj_property name="ObjectShortName">next_insn_opcode[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_insn_opcode">
+      <obj_property name="ElementShortName">dbg_insn_opcode[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_insn_opcode[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_insn_addr">
+      <obj_property name="ElementShortName">dbg_insn_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_insn_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_mem_valid">
+      <obj_property name="ElementShortName">dbg_mem_valid</obj_property>
+      <obj_property name="ObjectShortName">dbg_mem_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_mem_instr">
+      <obj_property name="ElementShortName">dbg_mem_instr</obj_property>
+      <obj_property name="ObjectShortName">dbg_mem_instr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_mem_ready">
+      <obj_property name="ElementShortName">dbg_mem_ready</obj_property>
+      <obj_property name="ObjectShortName">dbg_mem_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_mem_addr">
+      <obj_property name="ElementShortName">dbg_mem_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_mem_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_mem_wdata">
+      <obj_property name="ElementShortName">dbg_mem_wdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_mem_wdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_mem_wstrb">
+      <obj_property name="ElementShortName">dbg_mem_wstrb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_mem_wstrb[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_mem_rdata">
+      <obj_property name="ElementShortName">dbg_mem_rdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_mem_rdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/next_pc">
+      <obj_property name="ElementShortName">next_pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">next_pc[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/irq_delay">
+      <obj_property name="ElementShortName">irq_delay</obj_property>
+      <obj_property name="ObjectShortName">irq_delay</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/irq_active">
+      <obj_property name="ElementShortName">irq_active</obj_property>
+      <obj_property name="ObjectShortName">irq_active</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/irq_mask">
+      <obj_property name="ElementShortName">irq_mask[31:0]</obj_property>
+      <obj_property name="ObjectShortName">irq_mask[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/irq_pending">
+      <obj_property name="ElementShortName">irq_pending[31:0]</obj_property>
+      <obj_property name="ObjectShortName">irq_pending[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/timer">
+      <obj_property name="ElementShortName">timer[31:0]</obj_property>
+      <obj_property name="ObjectShortName">timer[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpuregs">
+      <obj_property name="ElementShortName">cpuregs[0:35][31:0]</obj_property>
+      <obj_property name="ObjectShortName">cpuregs[0:35][31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/i">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_mul_wr">
+      <obj_property name="ElementShortName">pcpi_mul_wr</obj_property>
+      <obj_property name="ObjectShortName">pcpi_mul_wr</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_mul_rd">
+      <obj_property name="ElementShortName">pcpi_mul_rd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pcpi_mul_rd[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_mul_wait">
+      <obj_property name="ElementShortName">pcpi_mul_wait</obj_property>
+      <obj_property name="ObjectShortName">pcpi_mul_wait</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_mul_ready">
+      <obj_property name="ElementShortName">pcpi_mul_ready</obj_property>
+      <obj_property name="ObjectShortName">pcpi_mul_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_div_wr">
+      <obj_property name="ElementShortName">pcpi_div_wr</obj_property>
+      <obj_property name="ObjectShortName">pcpi_div_wr</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_div_rd">
+      <obj_property name="ElementShortName">pcpi_div_rd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pcpi_div_rd[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_div_wait">
+      <obj_property name="ElementShortName">pcpi_div_wait</obj_property>
+      <obj_property name="ObjectShortName">pcpi_div_wait</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_div_ready">
+      <obj_property name="ElementShortName">pcpi_div_ready</obj_property>
+      <obj_property name="ObjectShortName">pcpi_div_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_int_wr">
+      <obj_property name="ElementShortName">pcpi_int_wr</obj_property>
+      <obj_property name="ObjectShortName">pcpi_int_wr</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_int_rd">
+      <obj_property name="ElementShortName">pcpi_int_rd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pcpi_int_rd[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_int_wait">
+      <obj_property name="ElementShortName">pcpi_int_wait</obj_property>
+      <obj_property name="ObjectShortName">pcpi_int_wait</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_int_ready">
+      <obj_property name="ElementShortName">pcpi_int_ready</obj_property>
+      <obj_property name="ObjectShortName">pcpi_int_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_state">
+      <obj_property name="ElementShortName">mem_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_wordsize">
+      <obj_property name="ElementShortName">mem_wordsize[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_wordsize[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_rdata_word">
+      <obj_property name="ElementShortName">mem_rdata_word[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_rdata_word[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_rdata_q">
+      <obj_property name="ElementShortName">mem_rdata_q[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_rdata_q[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_do_prefetch">
+      <obj_property name="ElementShortName">mem_do_prefetch</obj_property>
+      <obj_property name="ObjectShortName">mem_do_prefetch</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_do_rinst">
+      <obj_property name="ElementShortName">mem_do_rinst</obj_property>
+      <obj_property name="ObjectShortName">mem_do_rinst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_do_rdata">
+      <obj_property name="ElementShortName">mem_do_rdata</obj_property>
+      <obj_property name="ObjectShortName">mem_do_rdata</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_do_wdata">
+      <obj_property name="ElementShortName">mem_do_wdata</obj_property>
+      <obj_property name="ObjectShortName">mem_do_wdata</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_xfer">
+      <obj_property name="ElementShortName">mem_xfer</obj_property>
+      <obj_property name="ObjectShortName">mem_xfer</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_la_secondword">
+      <obj_property name="ElementShortName">mem_la_secondword</obj_property>
+      <obj_property name="ObjectShortName">mem_la_secondword</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_la_firstword_reg">
+      <obj_property name="ElementShortName">mem_la_firstword_reg</obj_property>
+      <obj_property name="ObjectShortName">mem_la_firstword_reg</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/last_mem_valid">
+      <obj_property name="ElementShortName">last_mem_valid</obj_property>
+      <obj_property name="ObjectShortName">last_mem_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_la_firstword">
+      <obj_property name="ElementShortName">mem_la_firstword</obj_property>
+      <obj_property name="ObjectShortName">mem_la_firstword</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_la_firstword_xfer">
+      <obj_property name="ElementShortName">mem_la_firstword_xfer</obj_property>
+      <obj_property name="ObjectShortName">mem_la_firstword_xfer</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/prefetched_high_word">
+      <obj_property name="ElementShortName">prefetched_high_word</obj_property>
+      <obj_property name="ObjectShortName">prefetched_high_word</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/clear_prefetched_high_word">
+      <obj_property name="ElementShortName">clear_prefetched_high_word</obj_property>
+      <obj_property name="ObjectShortName">clear_prefetched_high_word</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_16bit_buffer">
+      <obj_property name="ElementShortName">mem_16bit_buffer[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_16bit_buffer[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_rdata_latched_noshuffle">
+      <obj_property name="ElementShortName">mem_rdata_latched_noshuffle[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_rdata_latched_noshuffle[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_rdata_latched">
+      <obj_property name="ElementShortName">mem_rdata_latched[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_rdata_latched[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_la_use_prefetched_high_word">
+      <obj_property name="ElementShortName">mem_la_use_prefetched_high_word</obj_property>
+      <obj_property name="ObjectShortName">mem_la_use_prefetched_high_word</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_busy">
+      <obj_property name="ElementShortName">mem_busy</obj_property>
+      <obj_property name="ObjectShortName">mem_busy</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/mem_done">
+      <obj_property name="ElementShortName">mem_done</obj_property>
+      <obj_property name="ObjectShortName">mem_done</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_lui">
+      <obj_property name="ElementShortName">instr_lui</obj_property>
+      <obj_property name="ObjectShortName">instr_lui</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_auipc">
+      <obj_property name="ElementShortName">instr_auipc</obj_property>
+      <obj_property name="ObjectShortName">instr_auipc</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_jal">
+      <obj_property name="ElementShortName">instr_jal</obj_property>
+      <obj_property name="ObjectShortName">instr_jal</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_jalr">
+      <obj_property name="ElementShortName">instr_jalr</obj_property>
+      <obj_property name="ObjectShortName">instr_jalr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_beq">
+      <obj_property name="ElementShortName">instr_beq</obj_property>
+      <obj_property name="ObjectShortName">instr_beq</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_bne">
+      <obj_property name="ElementShortName">instr_bne</obj_property>
+      <obj_property name="ObjectShortName">instr_bne</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_blt">
+      <obj_property name="ElementShortName">instr_blt</obj_property>
+      <obj_property name="ObjectShortName">instr_blt</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_bge">
+      <obj_property name="ElementShortName">instr_bge</obj_property>
+      <obj_property name="ObjectShortName">instr_bge</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_bltu">
+      <obj_property name="ElementShortName">instr_bltu</obj_property>
+      <obj_property name="ObjectShortName">instr_bltu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_bgeu">
+      <obj_property name="ElementShortName">instr_bgeu</obj_property>
+      <obj_property name="ObjectShortName">instr_bgeu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_lb">
+      <obj_property name="ElementShortName">instr_lb</obj_property>
+      <obj_property name="ObjectShortName">instr_lb</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_lh">
+      <obj_property name="ElementShortName">instr_lh</obj_property>
+      <obj_property name="ObjectShortName">instr_lh</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_lw">
+      <obj_property name="ElementShortName">instr_lw</obj_property>
+      <obj_property name="ObjectShortName">instr_lw</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_lbu">
+      <obj_property name="ElementShortName">instr_lbu</obj_property>
+      <obj_property name="ObjectShortName">instr_lbu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_lhu">
+      <obj_property name="ElementShortName">instr_lhu</obj_property>
+      <obj_property name="ObjectShortName">instr_lhu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_sb">
+      <obj_property name="ElementShortName">instr_sb</obj_property>
+      <obj_property name="ObjectShortName">instr_sb</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_sh">
+      <obj_property name="ElementShortName">instr_sh</obj_property>
+      <obj_property name="ObjectShortName">instr_sh</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_sw">
+      <obj_property name="ElementShortName">instr_sw</obj_property>
+      <obj_property name="ObjectShortName">instr_sw</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_addi">
+      <obj_property name="ElementShortName">instr_addi</obj_property>
+      <obj_property name="ObjectShortName">instr_addi</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_slti">
+      <obj_property name="ElementShortName">instr_slti</obj_property>
+      <obj_property name="ObjectShortName">instr_slti</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_sltiu">
+      <obj_property name="ElementShortName">instr_sltiu</obj_property>
+      <obj_property name="ObjectShortName">instr_sltiu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_xori">
+      <obj_property name="ElementShortName">instr_xori</obj_property>
+      <obj_property name="ObjectShortName">instr_xori</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_ori">
+      <obj_property name="ElementShortName">instr_ori</obj_property>
+      <obj_property name="ObjectShortName">instr_ori</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_andi">
+      <obj_property name="ElementShortName">instr_andi</obj_property>
+      <obj_property name="ObjectShortName">instr_andi</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_slli">
+      <obj_property name="ElementShortName">instr_slli</obj_property>
+      <obj_property name="ObjectShortName">instr_slli</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_srli">
+      <obj_property name="ElementShortName">instr_srli</obj_property>
+      <obj_property name="ObjectShortName">instr_srli</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_srai">
+      <obj_property name="ElementShortName">instr_srai</obj_property>
+      <obj_property name="ObjectShortName">instr_srai</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_add">
+      <obj_property name="ElementShortName">instr_add</obj_property>
+      <obj_property name="ObjectShortName">instr_add</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_sub">
+      <obj_property name="ElementShortName">instr_sub</obj_property>
+      <obj_property name="ObjectShortName">instr_sub</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_sll">
+      <obj_property name="ElementShortName">instr_sll</obj_property>
+      <obj_property name="ObjectShortName">instr_sll</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_slt">
+      <obj_property name="ElementShortName">instr_slt</obj_property>
+      <obj_property name="ObjectShortName">instr_slt</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_sltu">
+      <obj_property name="ElementShortName">instr_sltu</obj_property>
+      <obj_property name="ObjectShortName">instr_sltu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_xor">
+      <obj_property name="ElementShortName">instr_xor</obj_property>
+      <obj_property name="ObjectShortName">instr_xor</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_srl">
+      <obj_property name="ElementShortName">instr_srl</obj_property>
+      <obj_property name="ObjectShortName">instr_srl</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_sra">
+      <obj_property name="ElementShortName">instr_sra</obj_property>
+      <obj_property name="ObjectShortName">instr_sra</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_or">
+      <obj_property name="ElementShortName">instr_or</obj_property>
+      <obj_property name="ObjectShortName">instr_or</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_and">
+      <obj_property name="ElementShortName">instr_and</obj_property>
+      <obj_property name="ObjectShortName">instr_and</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_rdcycle">
+      <obj_property name="ElementShortName">instr_rdcycle</obj_property>
+      <obj_property name="ObjectShortName">instr_rdcycle</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_rdcycleh">
+      <obj_property name="ElementShortName">instr_rdcycleh</obj_property>
+      <obj_property name="ObjectShortName">instr_rdcycleh</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_rdinstr">
+      <obj_property name="ElementShortName">instr_rdinstr</obj_property>
+      <obj_property name="ObjectShortName">instr_rdinstr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_rdinstrh">
+      <obj_property name="ElementShortName">instr_rdinstrh</obj_property>
+      <obj_property name="ObjectShortName">instr_rdinstrh</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_ecall_ebreak">
+      <obj_property name="ElementShortName">instr_ecall_ebreak</obj_property>
+      <obj_property name="ObjectShortName">instr_ecall_ebreak</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_fence">
+      <obj_property name="ElementShortName">instr_fence</obj_property>
+      <obj_property name="ObjectShortName">instr_fence</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_getq">
+      <obj_property name="ElementShortName">instr_getq</obj_property>
+      <obj_property name="ObjectShortName">instr_getq</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_setq">
+      <obj_property name="ElementShortName">instr_setq</obj_property>
+      <obj_property name="ObjectShortName">instr_setq</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_retirq">
+      <obj_property name="ElementShortName">instr_retirq</obj_property>
+      <obj_property name="ObjectShortName">instr_retirq</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_maskirq">
+      <obj_property name="ElementShortName">instr_maskirq</obj_property>
+      <obj_property name="ObjectShortName">instr_maskirq</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_waitirq">
+      <obj_property name="ElementShortName">instr_waitirq</obj_property>
+      <obj_property name="ObjectShortName">instr_waitirq</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_timer">
+      <obj_property name="ElementShortName">instr_timer</obj_property>
+      <obj_property name="ObjectShortName">instr_timer</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/instr_trap">
+      <obj_property name="ElementShortName">instr_trap</obj_property>
+      <obj_property name="ObjectShortName">instr_trap</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/decoded_rd">
+      <obj_property name="ElementShortName">decoded_rd[5:0]</obj_property>
+      <obj_property name="ObjectShortName">decoded_rd[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/decoded_rs1">
+      <obj_property name="ElementShortName">decoded_rs1[5:0]</obj_property>
+      <obj_property name="ObjectShortName">decoded_rs1[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/decoded_rs2">
+      <obj_property name="ElementShortName">decoded_rs2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">decoded_rs2[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/decoded_imm">
+      <obj_property name="ElementShortName">decoded_imm[31:0]</obj_property>
+      <obj_property name="ObjectShortName">decoded_imm[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/decoded_imm_j">
+      <obj_property name="ElementShortName">decoded_imm_j[31:0]</obj_property>
+      <obj_property name="ObjectShortName">decoded_imm_j[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/decoder_trigger">
+      <obj_property name="ElementShortName">decoder_trigger</obj_property>
+      <obj_property name="ObjectShortName">decoder_trigger</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/decoder_trigger_q">
+      <obj_property name="ElementShortName">decoder_trigger_q</obj_property>
+      <obj_property name="ObjectShortName">decoder_trigger_q</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/decoder_pseudo_trigger">
+      <obj_property name="ElementShortName">decoder_pseudo_trigger</obj_property>
+      <obj_property name="ObjectShortName">decoder_pseudo_trigger</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/decoder_pseudo_trigger_q">
+      <obj_property name="ElementShortName">decoder_pseudo_trigger_q</obj_property>
+      <obj_property name="ObjectShortName">decoder_pseudo_trigger_q</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/compressed_instr">
+      <obj_property name="ElementShortName">compressed_instr</obj_property>
+      <obj_property name="ObjectShortName">compressed_instr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_lui_auipc_jal">
+      <obj_property name="ElementShortName">is_lui_auipc_jal</obj_property>
+      <obj_property name="ObjectShortName">is_lui_auipc_jal</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_lb_lh_lw_lbu_lhu">
+      <obj_property name="ElementShortName">is_lb_lh_lw_lbu_lhu</obj_property>
+      <obj_property name="ObjectShortName">is_lb_lh_lw_lbu_lhu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_slli_srli_srai">
+      <obj_property name="ElementShortName">is_slli_srli_srai</obj_property>
+      <obj_property name="ObjectShortName">is_slli_srli_srai</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_jalr_addi_slti_sltiu_xori_ori_andi">
+      <obj_property name="ElementShortName">is_jalr_addi_slti_sltiu_xori_ori_andi</obj_property>
+      <obj_property name="ObjectShortName">is_jalr_addi_slti_sltiu_xori_ori_andi</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_sb_sh_sw">
+      <obj_property name="ElementShortName">is_sb_sh_sw</obj_property>
+      <obj_property name="ObjectShortName">is_sb_sh_sw</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_sll_srl_sra">
+      <obj_property name="ElementShortName">is_sll_srl_sra</obj_property>
+      <obj_property name="ObjectShortName">is_sll_srl_sra</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_lui_auipc_jal_jalr_addi_add_sub">
+      <obj_property name="ElementShortName">is_lui_auipc_jal_jalr_addi_add_sub</obj_property>
+      <obj_property name="ObjectShortName">is_lui_auipc_jal_jalr_addi_add_sub</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_slti_blt_slt">
+      <obj_property name="ElementShortName">is_slti_blt_slt</obj_property>
+      <obj_property name="ObjectShortName">is_slti_blt_slt</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_sltiu_bltu_sltu">
+      <obj_property name="ElementShortName">is_sltiu_bltu_sltu</obj_property>
+      <obj_property name="ObjectShortName">is_sltiu_bltu_sltu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_beq_bne_blt_bge_bltu_bgeu">
+      <obj_property name="ElementShortName">is_beq_bne_blt_bge_bltu_bgeu</obj_property>
+      <obj_property name="ObjectShortName">is_beq_bne_blt_bge_bltu_bgeu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_lbu_lhu_lw">
+      <obj_property name="ElementShortName">is_lbu_lhu_lw</obj_property>
+      <obj_property name="ObjectShortName">is_lbu_lhu_lw</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_alu_reg_imm">
+      <obj_property name="ElementShortName">is_alu_reg_imm</obj_property>
+      <obj_property name="ObjectShortName">is_alu_reg_imm</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_alu_reg_reg">
+      <obj_property name="ElementShortName">is_alu_reg_reg</obj_property>
+      <obj_property name="ObjectShortName">is_alu_reg_reg</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_compare">
+      <obj_property name="ElementShortName">is_compare</obj_property>
+      <obj_property name="ObjectShortName">is_compare</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/is_rdcycle_rdcycleh_rdinstr_rdinstrh">
+      <obj_property name="ElementShortName">is_rdcycle_rdcycleh_rdinstr_rdinstrh</obj_property>
+      <obj_property name="ObjectShortName">is_rdcycle_rdcycleh_rdinstr_rdinstrh</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/new_ascii_instr">
+      <obj_property name="ElementShortName">new_ascii_instr[63:0]</obj_property>
+      <obj_property name="ObjectShortName">new_ascii_instr[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_ascii_instr">
+      <obj_property name="ElementShortName">dbg_ascii_instr[63:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_ascii_instr[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_insn_imm">
+      <obj_property name="ElementShortName">dbg_insn_imm[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_insn_imm[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_insn_rs1">
+      <obj_property name="ElementShortName">dbg_insn_rs1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_insn_rs1[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_insn_rs2">
+      <obj_property name="ElementShortName">dbg_insn_rs2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_insn_rs2[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_insn_rd">
+      <obj_property name="ElementShortName">dbg_insn_rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_insn_rd[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_rs1val">
+      <obj_property name="ElementShortName">dbg_rs1val[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_rs1val[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_rs2val">
+      <obj_property name="ElementShortName">dbg_rs2val[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_rs2val[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_rs1val_valid">
+      <obj_property name="ElementShortName">dbg_rs1val_valid</obj_property>
+      <obj_property name="ObjectShortName">dbg_rs1val_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_rs2val_valid">
+      <obj_property name="ElementShortName">dbg_rs2val_valid</obj_property>
+      <obj_property name="ObjectShortName">dbg_rs2val_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/q_ascii_instr">
+      <obj_property name="ElementShortName">q_ascii_instr[63:0]</obj_property>
+      <obj_property name="ObjectShortName">q_ascii_instr[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/q_insn_imm">
+      <obj_property name="ElementShortName">q_insn_imm[31:0]</obj_property>
+      <obj_property name="ObjectShortName">q_insn_imm[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/q_insn_opcode">
+      <obj_property name="ElementShortName">q_insn_opcode[31:0]</obj_property>
+      <obj_property name="ObjectShortName">q_insn_opcode[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/q_insn_rs1">
+      <obj_property name="ElementShortName">q_insn_rs1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">q_insn_rs1[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/q_insn_rs2">
+      <obj_property name="ElementShortName">q_insn_rs2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">q_insn_rs2[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/q_insn_rd">
+      <obj_property name="ElementShortName">q_insn_rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">q_insn_rd[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_next">
+      <obj_property name="ElementShortName">dbg_next</obj_property>
+      <obj_property name="ObjectShortName">dbg_next</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/launch_next_insn">
+      <obj_property name="ElementShortName">launch_next_insn</obj_property>
+      <obj_property name="ObjectShortName">launch_next_insn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_valid_insn">
+      <obj_property name="ElementShortName">dbg_valid_insn</obj_property>
+      <obj_property name="ObjectShortName">dbg_valid_insn</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cached_ascii_instr">
+      <obj_property name="ElementShortName">cached_ascii_instr[63:0]</obj_property>
+      <obj_property name="ObjectShortName">cached_ascii_instr[63:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cached_insn_imm">
+      <obj_property name="ElementShortName">cached_insn_imm[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cached_insn_imm[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cached_insn_opcode">
+      <obj_property name="ElementShortName">cached_insn_opcode[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cached_insn_opcode[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cached_insn_rs1">
+      <obj_property name="ElementShortName">cached_insn_rs1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cached_insn_rs1[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cached_insn_rs2">
+      <obj_property name="ElementShortName">cached_insn_rs2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cached_insn_rs2[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cached_insn_rd">
+      <obj_property name="ElementShortName">cached_insn_rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cached_insn_rd[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpu_state">
+      <obj_property name="ElementShortName">cpu_state[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_state[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/irq_state">
+      <obj_property name="ElementShortName">irq_state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">irq_state[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/dbg_ascii_state">
+      <obj_property name="ElementShortName">dbg_ascii_state[127:0]</obj_property>
+      <obj_property name="ObjectShortName">dbg_ascii_state[127:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/set_mem_do_rinst">
+      <obj_property name="ElementShortName">set_mem_do_rinst</obj_property>
+      <obj_property name="ObjectShortName">set_mem_do_rinst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/set_mem_do_rdata">
+      <obj_property name="ElementShortName">set_mem_do_rdata</obj_property>
+      <obj_property name="ObjectShortName">set_mem_do_rdata</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/set_mem_do_wdata">
+      <obj_property name="ElementShortName">set_mem_do_wdata</obj_property>
+      <obj_property name="ObjectShortName">set_mem_do_wdata</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/latched_store">
+      <obj_property name="ElementShortName">latched_store</obj_property>
+      <obj_property name="ObjectShortName">latched_store</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/latched_stalu">
+      <obj_property name="ElementShortName">latched_stalu</obj_property>
+      <obj_property name="ObjectShortName">latched_stalu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/latched_branch">
+      <obj_property name="ElementShortName">latched_branch</obj_property>
+      <obj_property name="ObjectShortName">latched_branch</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/latched_compr">
+      <obj_property name="ElementShortName">latched_compr</obj_property>
+      <obj_property name="ObjectShortName">latched_compr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/latched_trace">
+      <obj_property name="ElementShortName">latched_trace</obj_property>
+      <obj_property name="ObjectShortName">latched_trace</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/latched_is_lu">
+      <obj_property name="ElementShortName">latched_is_lu</obj_property>
+      <obj_property name="ObjectShortName">latched_is_lu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/latched_is_lh">
+      <obj_property name="ElementShortName">latched_is_lh</obj_property>
+      <obj_property name="ObjectShortName">latched_is_lh</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/latched_is_lb">
+      <obj_property name="ElementShortName">latched_is_lb</obj_property>
+      <obj_property name="ObjectShortName">latched_is_lb</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/latched_rd">
+      <obj_property name="ElementShortName">latched_rd[5:0]</obj_property>
+      <obj_property name="ObjectShortName">latched_rd[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/current_pc">
+      <obj_property name="ElementShortName">current_pc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">current_pc[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_timeout_counter">
+      <obj_property name="ElementShortName">pcpi_timeout_counter[3:0]</obj_property>
+      <obj_property name="ObjectShortName">pcpi_timeout_counter[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/pcpi_timeout">
+      <obj_property name="ElementShortName">pcpi_timeout</obj_property>
+      <obj_property name="ObjectShortName">pcpi_timeout</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/next_irq_pending">
+      <obj_property name="ElementShortName">next_irq_pending[31:0]</obj_property>
+      <obj_property name="ObjectShortName">next_irq_pending[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/do_waitirq">
+      <obj_property name="ElementShortName">do_waitirq</obj_property>
+      <obj_property name="ObjectShortName">do_waitirq</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/alu_out">
+      <obj_property name="ElementShortName">alu_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/alu_out_q">
+      <obj_property name="ElementShortName">alu_out_q[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_out_q[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/alu_out_0">
+      <obj_property name="ElementShortName">alu_out_0</obj_property>
+      <obj_property name="ObjectShortName">alu_out_0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/alu_out_0_q">
+      <obj_property name="ElementShortName">alu_out_0_q</obj_property>
+      <obj_property name="ObjectShortName">alu_out_0_q</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/alu_wait">
+      <obj_property name="ElementShortName">alu_wait</obj_property>
+      <obj_property name="ObjectShortName">alu_wait</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/alu_wait_2">
+      <obj_property name="ElementShortName">alu_wait_2</obj_property>
+      <obj_property name="ObjectShortName">alu_wait_2</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/alu_add_sub">
+      <obj_property name="ElementShortName">alu_add_sub[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_add_sub[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/alu_shl">
+      <obj_property name="ElementShortName">alu_shl[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_shl[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/alu_shr">
+      <obj_property name="ElementShortName">alu_shr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_shr[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/alu_eq">
+      <obj_property name="ElementShortName">alu_eq</obj_property>
+      <obj_property name="ObjectShortName">alu_eq</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/alu_ltu">
+      <obj_property name="ElementShortName">alu_ltu</obj_property>
+      <obj_property name="ObjectShortName">alu_ltu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/alu_lts">
+      <obj_property name="ElementShortName">alu_lts</obj_property>
+      <obj_property name="ObjectShortName">alu_lts</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/clear_prefetched_high_word_q">
+      <obj_property name="ElementShortName">clear_prefetched_high_word_q</obj_property>
+      <obj_property name="ObjectShortName">clear_prefetched_high_word_q</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpuregs_write">
+      <obj_property name="ElementShortName">cpuregs_write</obj_property>
+      <obj_property name="ObjectShortName">cpuregs_write</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpuregs_wrdata">
+      <obj_property name="ElementShortName">cpuregs_wrdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cpuregs_wrdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpuregs_rs1">
+      <obj_property name="ElementShortName">cpuregs_rs1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cpuregs_rs1[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpuregs_rs2">
+      <obj_property name="ElementShortName">cpuregs_rs2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cpuregs_rs2[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/decoded_rs">
+      <obj_property name="ElementShortName">decoded_rs[5:0]</obj_property>
+      <obj_property name="ObjectShortName">decoded_rs[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/ENABLE_COUNTERS">
+      <obj_property name="ElementShortName">ENABLE_COUNTERS</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_COUNTERS</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/ENABLE_COUNTERS64">
+      <obj_property name="ElementShortName">ENABLE_COUNTERS64</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_COUNTERS64</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/ENABLE_REGS_16_31">
+      <obj_property name="ElementShortName">ENABLE_REGS_16_31</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_REGS_16_31</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/ENABLE_REGS_DUALPORT">
+      <obj_property name="ElementShortName">ENABLE_REGS_DUALPORT</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_REGS_DUALPORT</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/LATCHED_MEM_RDATA">
+      <obj_property name="ElementShortName">LATCHED_MEM_RDATA</obj_property>
+      <obj_property name="ObjectShortName">LATCHED_MEM_RDATA</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/TWO_STAGE_SHIFT">
+      <obj_property name="ElementShortName">TWO_STAGE_SHIFT</obj_property>
+      <obj_property name="ObjectShortName">TWO_STAGE_SHIFT</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/BARREL_SHIFTER">
+      <obj_property name="ElementShortName">BARREL_SHIFTER</obj_property>
+      <obj_property name="ObjectShortName">BARREL_SHIFTER</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/TWO_CYCLE_COMPARE">
+      <obj_property name="ElementShortName">TWO_CYCLE_COMPARE</obj_property>
+      <obj_property name="ObjectShortName">TWO_CYCLE_COMPARE</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/TWO_CYCLE_ALU">
+      <obj_property name="ElementShortName">TWO_CYCLE_ALU</obj_property>
+      <obj_property name="ObjectShortName">TWO_CYCLE_ALU</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/COMPRESSED_ISA">
+      <obj_property name="ElementShortName">COMPRESSED_ISA</obj_property>
+      <obj_property name="ObjectShortName">COMPRESSED_ISA</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/CATCH_MISALIGN">
+      <obj_property name="ElementShortName">CATCH_MISALIGN</obj_property>
+      <obj_property name="ObjectShortName">CATCH_MISALIGN</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/CATCH_ILLINSN">
+      <obj_property name="ElementShortName">CATCH_ILLINSN</obj_property>
+      <obj_property name="ObjectShortName">CATCH_ILLINSN</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/ENABLE_PCPI">
+      <obj_property name="ElementShortName">ENABLE_PCPI</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_PCPI</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/ENABLE_MUL">
+      <obj_property name="ElementShortName">ENABLE_MUL</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_MUL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/ENABLE_FAST_MUL">
+      <obj_property name="ElementShortName">ENABLE_FAST_MUL</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_FAST_MUL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/ENABLE_DIV">
+      <obj_property name="ElementShortName">ENABLE_DIV</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_DIV</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/ENABLE_IRQ">
+      <obj_property name="ElementShortName">ENABLE_IRQ</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_IRQ</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/ENABLE_IRQ_QREGS">
+      <obj_property name="ElementShortName">ENABLE_IRQ_QREGS</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_IRQ_QREGS</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/ENABLE_IRQ_TIMER">
+      <obj_property name="ElementShortName">ENABLE_IRQ_TIMER</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_IRQ_TIMER</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/ENABLE_TRACE">
+      <obj_property name="ElementShortName">ENABLE_TRACE</obj_property>
+      <obj_property name="ObjectShortName">ENABLE_TRACE</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/REGS_INIT_ZERO">
+      <obj_property name="ElementShortName">REGS_INIT_ZERO</obj_property>
+      <obj_property name="ObjectShortName">REGS_INIT_ZERO</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/MASKED_IRQ">
+      <obj_property name="ElementShortName">MASKED_IRQ[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MASKED_IRQ[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/LATCHED_IRQ">
+      <obj_property name="ElementShortName">LATCHED_IRQ[31:0]</obj_property>
+      <obj_property name="ObjectShortName">LATCHED_IRQ[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/PROGADDR_RESET">
+      <obj_property name="ElementShortName">PROGADDR_RESET[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PROGADDR_RESET[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/PROGADDR_IRQ">
+      <obj_property name="ElementShortName">PROGADDR_IRQ[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PROGADDR_IRQ[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/STACKADDR">
+      <obj_property name="ElementShortName">STACKADDR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">STACKADDR[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/irq_timer">
+      <obj_property name="ElementShortName">irq_timer[31:0]</obj_property>
+      <obj_property name="ObjectShortName">irq_timer[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/irq_ebreak">
+      <obj_property name="ElementShortName">irq_ebreak[31:0]</obj_property>
+      <obj_property name="ObjectShortName">irq_ebreak[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/irq_buserror">
+      <obj_property name="ElementShortName">irq_buserror[31:0]</obj_property>
+      <obj_property name="ObjectShortName">irq_buserror[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/irqregs_offset">
+      <obj_property name="ElementShortName">irqregs_offset[31:0]</obj_property>
+      <obj_property name="ObjectShortName">irqregs_offset[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/regfile_size">
+      <obj_property name="ElementShortName">regfile_size[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regfile_size[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/regindex_bits">
+      <obj_property name="ElementShortName">regindex_bits[31:0]</obj_property>
+      <obj_property name="ObjectShortName">regindex_bits[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/WITH_PCPI">
+      <obj_property name="ElementShortName">WITH_PCPI</obj_property>
+      <obj_property name="ObjectShortName">WITH_PCPI</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/TRACE_BRANCH">
+      <obj_property name="ElementShortName">TRACE_BRANCH[35:0]</obj_property>
+      <obj_property name="ObjectShortName">TRACE_BRANCH[35:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/TRACE_ADDR">
+      <obj_property name="ElementShortName">TRACE_ADDR[35:0]</obj_property>
+      <obj_property name="ObjectShortName">TRACE_ADDR[35:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/TRACE_IRQ">
+      <obj_property name="ElementShortName">TRACE_IRQ[35:0]</obj_property>
+      <obj_property name="ObjectShortName">TRACE_IRQ[35:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpu_state_trap">
+      <obj_property name="ElementShortName">cpu_state_trap[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_state_trap[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpu_state_fetch">
+      <obj_property name="ElementShortName">cpu_state_fetch[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_state_fetch[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpu_state_ld_rs1">
+      <obj_property name="ElementShortName">cpu_state_ld_rs1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_state_ld_rs1[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpu_state_ld_rs2">
+      <obj_property name="ElementShortName">cpu_state_ld_rs2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_state_ld_rs2[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpu_state_exec">
+      <obj_property name="ElementShortName">cpu_state_exec[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_state_exec[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpu_state_shift">
+      <obj_property name="ElementShortName">cpu_state_shift[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_state_shift[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpu_state_stmem">
+      <obj_property name="ElementShortName">cpu_state_stmem[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_state_stmem[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/litex_soc_m1_inst/picorv32/cpu_state_ldmem">
+      <obj_property name="ElementShortName">cpu_state_ldmem[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_state_ldmem[7:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -423,8 +423,55 @@ set_global_assignment -name TOP_LEVEL_ENTITY         board_specific_top
 set_global_assignment -name SDC_FILE                 $rel_board_dir/$fpga_board/board_specific.sdc
 
 set_global_assignment -name SEARCH_PATH $rel_main_src_dir
+
+EOF
+
+    # add_dirs.d in the example directory lists extra source directories,
+    # one path per line, relative to that directory. Blank lines and
+    # comments (#) are ignored. .sv files under the example are picked up
+    # by the search below; other HDL files are added here.
+
+    local add_dirs_file="$main_src_dir/add_dirs.d"
+    local add_src_dirs=
+    local add_dir abs_add_dir rel_add_dir main_src_real src_file rel_file
+    local inside_example file_kind
+
+    if [ -f "$add_dirs_file" ]
+    then
+        main_src_real=$(readlink -f "$main_src_dir")
+
+        while IFS= read -r add_dir || [ -n "$add_dir" ]
+        do
+            add_dir="${add_dir#"${add_dir%%[![:space:]]*}"}"
+            add_dir="${add_dir%"${add_dir##*[![:space:]]}"}"
+
+            case "$add_dir" in
+                ''|\#*) continue ;;
+            esac
+
+            case "$add_dir" in
+                /*) abs_add_dir=$add_dir ;;
+                *)  abs_add_dir=$main_src_dir/$add_dir ;;
+            esac
+
+            [ -d "$abs_add_dir" ] ||
+                error "directory '$abs_add_dir' listed in '$add_dirs_file' expected"
+
+            abs_add_dir=$(readlink -f "$abs_add_dir")
+            rel_add_dir=$(realpath --relative-to="$dir" "$abs_add_dir")
+
+            printf "set_global_assignment -name SEARCH_PATH %s\n" "$rel_add_dir" \
+                >> "$dir/fpga_project.qsf"
+
+            add_src_dirs="${add_src_dirs:+$add_src_dirs$'\n'}$abs_add_dir"
+        done < "$add_dirs_file"
+    fi
+
+    cat << EOF >> "$dir/fpga_project.qsf"
+
 set_global_assignment -name SEARCH_PATH $rel_board_dir/$fpga_board
 set_global_assignment -name SEARCH_PATH $rel_peripheral_dir
+set_global_assignment -name SEARCH_PATH $rel_lab_dir/common
 set_global_assignment -name SEARCH_PATH $rel_lab_dir/common
 
 EOF
@@ -434,6 +481,45 @@ EOF
         -type f -name '*.sv' -not -name tb.sv  \
         -printf "set_global_assignment -name SYSTEMVERILOG_FILE %f\n"  \
         >> "$dir/fpga_project.qsf"
+
+    if [ -n "$add_src_dirs" ]
+    then
+        while IFS= read -r abs_add_dir
+        do
+            [ -n "$abs_add_dir" ] || continue
+
+            # .sv under the example is already listed by basename.
+            # SEARCH_PATH makes that name resolvable.
+            inside_example=0
+
+            if [ "$abs_add_dir" = "$main_src_real" ] \
+                || [ "${abs_add_dir#"$main_src_real"/}" != "$abs_add_dir" ]
+            then
+                inside_example=1
+            fi
+
+            while IFS= read -r src_file
+            do
+                [ -n "$src_file" ] || continue
+
+                case "$src_file" in
+                    *.sv)
+                        [ "$inside_example" = 1 ] && continue
+                        file_kind=SYSTEMVERILOG_FILE
+                        ;;
+                    *)
+                        file_kind=VERILOG_FILE
+                        ;;
+                esac
+
+                rel_file=$(realpath --relative-to="$dir" "$src_file")
+                printf "set_global_assignment -name %s %s\n" \
+                    "$file_kind" "$rel_file"
+            done < <($find_to_run "$abs_add_dir" -type f \
+                        \( -name '*.v' -o -name '*.sv' \) \
+                        ! -name tb.v ! -name tb.sv -print)
+        done <<< "$add_src_dirs" >> "$dir/fpga_project.qsf"
+    fi
 
     if [ -f "$main_src_dir/extra_project_files.qsf" ] ; then
         cat "$main_src_dir/extra_project_files.qsf" >> "$dir/fpga_project.qsf"
