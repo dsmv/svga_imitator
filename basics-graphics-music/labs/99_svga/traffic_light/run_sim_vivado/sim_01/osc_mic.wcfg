@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="\$unit_sim_inn441_sv_3974464201 " />
+            <top_module name="tb" />
+            <top_module name="tb_01_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000000 ms"></ZoomStartTime>
+      <ZoomEndTime time="192.000000001 ms"></ZoomEndTime>
+      <Cursor1Time time="113.088260900 ms"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="250"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="30" />
+   <wvobject type="logic" fp_name="/tb/lab_top/osc_mic/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/osc_mic/reset_p">
+      <obj_property name="ElementShortName">reset_p</obj_property>
+      <obj_property name="ObjectShortName">reset_p</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/data">
+      <obj_property name="ElementShortName">data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/osc_mic/data_we">
+      <obj_property name="ElementShortName">data_we</obj_property>
+      <obj_property name="ObjectShortName">data_we</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/threshold">
+      <obj_property name="ElementShortName">threshold[15:0]</obj_property>
+      <obj_property name="ObjectShortName">threshold[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/x">
+      <obj_property name="ElementShortName">x[11:0]</obj_property>
+      <obj_property name="ObjectShortName">x[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/y">
+      <obj_property name="ElementShortName">y[10:0]</obj_property>
+      <obj_property name="ObjectShortName">y[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/vga_r">
+      <obj_property name="ElementShortName">vga_r[3:0]</obj_property>
+      <obj_property name="ObjectShortName">vga_r[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/vga_g">
+      <obj_property name="ElementShortName">vga_g[3:0]</obj_property>
+      <obj_property name="ObjectShortName">vga_g[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/vga_b">
+      <obj_property name="ElementShortName">vga_b[3:0]</obj_property>
+      <obj_property name="ObjectShortName">vga_b[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/osc_mic/vsync">
+      <obj_property name="ElementShortName">vsync</obj_property>
+      <obj_property name="ObjectShortName">vsync</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/state">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/stp">
+      <obj_property name="ElementShortName">stp[3:0]</obj_property>
+      <obj_property name="ObjectShortName">stp[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/index_wr">
+      <obj_property name="ElementShortName">index_wr[10:0]</obj_property>
+      <obj_property name="ObjectShortName">index_wr[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/vsync_cnt">
+      <obj_property name="ElementShortName">vsync_cnt[3:0]</obj_property>
+      <obj_property name="ObjectShortName">vsync_cnt[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/n_stp">
+      <obj_property name="ElementShortName">n_stp[3:0]</obj_property>
+      <obj_property name="ObjectShortName">n_stp[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/n_index_wr">
+      <obj_property name="ElementShortName">n_index_wr[10:0]</obj_property>
+      <obj_property name="ObjectShortName">n_index_wr[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/n_vsync_cnt">
+      <obj_property name="ElementShortName">n_vsync_cnt[3:0]</obj_property>
+      <obj_property name="ObjectShortName">n_vsync_cnt[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/osc_mic/rstp">
+      <obj_property name="ElementShortName">rstp</obj_property>
+      <obj_property name="ObjectShortName">rstp</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/mem">
+      <obj_property name="ElementShortName">mem[1023:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">mem[1023:0][15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/osc_mic/vsync_z">
+      <obj_property name="ElementShortName">vsync_z</obj_property>
+      <obj_property name="ObjectShortName">vsync_z</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/osc_mic/vsync_step">
+      <obj_property name="ElementShortName">vsync_step</obj_property>
+      <obj_property name="ObjectShortName">vsync_step</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/curr_val_x">
+      <obj_property name="ElementShortName">curr_val_x[15:0]</obj_property>
+      <obj_property name="ObjectShortName">curr_val_x[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/val_y">
+      <obj_property name="ElementShortName">val_y[8:0]</obj_property>
+      <obj_property name="ObjectShortName">val_y[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/val_neg_y">
+      <obj_property name="ElementShortName">val_neg_y[9:0]</obj_property>
+      <obj_property name="ObjectShortName">val_neg_y[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/val_pos_y">
+      <obj_property name="ElementShortName">val_pos_y[9:0]</obj_property>
+      <obj_property name="ObjectShortName">val_pos_y[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/lab_top/osc_mic/osc_light">
+      <obj_property name="ElementShortName">osc_light</obj_property>
+      <obj_property name="ObjectShortName">osc_light</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/pos_y">
+      <obj_property name="ElementShortName">pos_y[9:0]</obj_property>
+      <obj_property name="ObjectShortName">pos_y[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/neg_y">
+      <obj_property name="ElementShortName">neg_y[9:0]</obj_property>
+      <obj_property name="ObjectShortName">neg_y[9:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/lab_top/osc_mic/is_simulation">
+      <obj_property name="ElementShortName">is_simulation[31:0]</obj_property>
+      <obj_property name="ObjectShortName">is_simulation[31:0]</obj_property>
+   </wvobject>
+</wave_config>

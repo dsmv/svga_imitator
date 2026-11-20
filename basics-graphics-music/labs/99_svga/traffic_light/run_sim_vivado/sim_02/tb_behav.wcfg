@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="\$unit_sim_svga_sv_1735908089 " />
+            <top_module name="tb" />
+            <top_module name="tb_02_pkg" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,062.449 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="76"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wvobject type="logic" fp_name="/tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/rst_2">
+      <obj_property name="ElementShortName">rst_2</obj_property>
+      <obj_property name="ObjectShortName">rst_2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/tick_05s">
+      <obj_property name="ElementShortName">tick_05s</obj_property>
+      <obj_property name="ObjectShortName">tick_05s</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/yellow_on">
+      <obj_property name="ElementShortName">yellow_on</obj_property>
+      <obj_property name="ObjectShortName">yellow_on</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/test_start">
+      <obj_property name="ElementShortName">test_start</obj_property>
+      <obj_property name="ObjectShortName">test_start</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/test_done">
+      <obj_property name="ElementShortName">test_done</obj_property>
+      <obj_property name="ObjectShortName">test_done</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/next_loop">
+      <obj_property name="ElementShortName">next_loop</obj_property>
+      <obj_property name="ObjectShortName">next_loop</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/checksum_ready">
+      <obj_property name="ElementShortName">checksum_ready</obj_property>
+      <obj_property name="ObjectShortName">checksum_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/checksum">
+      <obj_property name="ElementShortName">checksum[31:0]</obj_property>
+      <obj_property name="ObjectShortName">checksum[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uut/stp">
+      <obj_property name="ElementShortName">stp[3:0]</obj_property>
+      <obj_property name="ObjectShortName">stp[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/previous_stp">
+      <obj_property name="ElementShortName">previous_stp[3:0]</obj_property>
+      <obj_property name="ObjectShortName">previous_stp[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/n_stp">
+      <obj_property name="ElementShortName">n_stp[3:0]</obj_property>
+      <obj_property name="ObjectShortName">n_stp[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/uut/timer">
+      <obj_property name="ElementShortName">timer[5:0]</obj_property>
+      <obj_property name="ObjectShortName">timer[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/red">
+      <obj_property name="ElementShortName">red[3:0]</obj_property>
+      <obj_property name="ObjectShortName">red[3:0]</obj_property>
+   </wvobject>
+</wave_config>

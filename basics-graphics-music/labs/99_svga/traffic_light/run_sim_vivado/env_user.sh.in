@@ -1,0 +1,11 @@
+#
+# 
+#  1. copy env_user.sh.in to env_user.sh
+#  2. set correct path to Vivado settings64.sh
+#
+#
+
+SRC=/tools/Xilinx/Vivado/2023.2/settings64.sh 
+
+echo   $SRC
+source $SRC
